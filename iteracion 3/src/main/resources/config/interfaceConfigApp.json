@@ -1,0 +1,176 @@
+{
+	"title": "Aplicación transaccional de Parranderos Uniandes",
+	"frameH": 600,
+	"frameW": 800,
+	"bannerPath": "./src/main/resources/config/logo.png",
+	"menuBar":
+	[
+		{ "menuTitle": "Insertar",
+		  "options":
+			[
+				{
+					"label": "Adicionar Cliente",
+					"event": "adicionarCliente"
+				},
+				{
+					"label": "Adicionar Operador",
+					"event": "adicionarOperador"
+				},
+				{
+					"label": "Adicionar Oferta",
+					"event": "adicionarOferta"
+				},
+				{
+					"label": "Adicionar Reserva",
+					"event": "adicionarReserva"
+				},
+				{
+					"label": "Adicionar Adicional",
+					"event": "adicionarAdicional"
+				},
+				{
+					"label": "Borrar por Id",
+					"event": "eliminarTipoBebidaPorId"
+				},
+				{
+					"label": "Buscar por Nombre",
+					"event": "buscarTipoBebidaPorNombre"
+				}
+			]
+		},
+		{ "menuTitle": "Eliminar",
+		  "options":
+			[
+				{
+					"label": "Eliminar Reserva",
+					"event": "eliminarReservaPorId"
+				},
+				{
+					"label": "Eliminar Oferta de Alojamiento",
+					"event": "eliminarAlojamientoPorId"
+				}
+			]
+		},
+		{ "menuTitle": "Buscar",
+		  "options":
+			[
+				{
+					"label": "Buscar Oferta",
+					"event": "buscarOfertaPorId"
+				},
+				{
+					"label": "Listar Clientes",
+					"event": "listarClientes"
+
+				},
+				{
+					"label": "Listar Ofertas",
+					"event": "listarOfertas"
+				},
+				{
+					"label": "Listar Ofertas Apartamento",
+					"event": "listarOfertasApartamento"
+				},
+				{
+					"label": "Listar Adicionales",
+					"event": "listarAdicionales"
+				},
+				{
+					"label": "Listar Reservas",
+					"event": "listarReservas"
+				},
+				{
+					"label": "Listar Reservas por Oferta y fecha",
+					"event": "listarReservasOfertaEnFecha"
+				}
+			]
+		},
+		{ "menuTitle": "Requerimientos",
+		  "options":
+			[
+				{
+					"label": "RF7",
+					"event": "RF7"
+				},
+				{
+					"label": "RF8",
+					"event": "RF8"
+				},
+				{
+					"label": "RF9",
+					"event": "RF9"
+				}
+				,
+				{
+					"label": "RF10",
+					"event": "RF10"
+				}
+			]
+		},
+		{ "menuTitle": "Mantenimiento",
+		  "options":
+			[
+				{
+					"label": "Mostrar log Parranderos",
+					"event": "mostrarLogParranderos"
+				},
+				{
+					"label": "Mostrar log datanucleus",
+					"event": "mostrarLogDatanuecleus"
+				},
+				{
+					"label": "Limpiar log de parranderos",
+					"event": "limpiarLogParranderos"
+				},
+				{
+					"label": "Limpiar log de datanucleus",
+					"event": "limpiarLogDatanucleus"
+				},
+				{
+					"label": "Limpiar Base de Datos",
+					"event": "limpiarBD"
+				}
+			]
+		},		
+		{ "menuTitle": "Documentación",
+		  "options":
+			[
+				{
+					"label": "Presentación general",
+					"event": "mostrarPresentacionGeneral"
+				},
+				{
+					"label": "Modelo conceptual",
+					"event": "mostrarModeloConceptual"
+				},
+				{
+					"label": "Esquema de la BD",
+					"event": "mostrarEsquemaBD"
+				},
+				{
+					"label": "Script creación de la BD",
+					"event": "mostrarScriptBD"
+				},
+				{
+					"label": "Arquitectura de referencia",
+					"event": "mostrarArqRef"
+				},
+				{
+					"label": "Javadoc Parranderos",
+					"event": "mostrarJavadoc"
+				}
+			]
+		},		
+		{ "menuTitle": "Acerca de ...",
+		  "options":
+			[
+				{
+					"label": "Acerca de ...",
+					"event": "acercaDe"
+				}
+			]
+		}		
+		
+	]
+}
+	
