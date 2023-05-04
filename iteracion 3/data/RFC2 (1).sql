@@ -5,5 +5,4 @@ FROM OFERTAS O, (SELECT *
                      GROUP BY ID_OFERTA
                      ORDER BY GUSTADO DESC)
                 WHERE ROWNUM <=20)POPULARES
-WHERE O.id_oferta= POPULARES.ID_OFERTA
-;
+WHERE O.id_oferta= POPULARES.ID_OFERTA;
