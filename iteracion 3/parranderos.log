@@ -1367,3 +1367,6 @@ Conexión cerrada
 09:39:51,212 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
 09:39:51,213 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
 09:39:51,238 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+18:28:41,354 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+18:28:41,358 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+18:28:41,392 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
