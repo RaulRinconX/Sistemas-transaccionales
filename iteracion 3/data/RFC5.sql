@@ -5,3 +5,5 @@ CASE
   ELSE 'No especificado'
 END AS uso_usuario
 FROM usuarios u;
+
+SELECT * FROM USUARIOS;

@@ -54,7 +54,6 @@ public class SQLAdicional {
 	
 	public Adicional darAdicionalPorOfertaYNombre (PersistenceManager pm, long idOferta, String nombre) 
 	{
-		System.out.println(idOferta);
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaAdicionales() + " WHERE id_oferta = ? AND nombre = ?");
 		q.setResultClass(Adicional.class);
 		q.setParameters(idOferta, nombre);

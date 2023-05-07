@@ -47,9 +47,14 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
+import oracle.net.aso.t;
 import uniandes.isis2304.parranderos.negocio.AlohAndes;
+import uniandes.isis2304.parranderos.negocio.AlojamientosPopulares;
 import uniandes.isis2304.parranderos.negocio.Cliente;
+import uniandes.isis2304.parranderos.negocio.GananciaProveedor;
 import uniandes.isis2304.parranderos.negocio.Oferta;
+import uniandes.isis2304.parranderos.negocio.UsoAlohandes;
+import uniandes.isis2304.parranderos.negocio.UsoUsuario;
 import uniandes.isis2304.parranderos.negocio.VOAdicional;
 import uniandes.isis2304.parranderos.negocio.VOCliente;
 import uniandes.isis2304.parranderos.negocio.VOContrato;
@@ -62,6 +67,7 @@ import uniandes.isis2304.parranderos.negocio.VOOfertaViviendaUniversitaria;
 import uniandes.isis2304.parranderos.negocio.VOPersonaJuridica;
 import uniandes.isis2304.parranderos.negocio.VOPersonaNatural;
 import uniandes.isis2304.parranderos.negocio.VOReserva;
+import uniandes.isis2304.parranderos.negocio.VOUsuarios;
 
 /**
  * Clase principal de la interfaz
@@ -380,11 +386,11 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
 				
 				String resultado = "En adicionarAdicional\n\n";
         		resultado += "Adicional adicionada exitosamente: " + adicional;
-    			resultado += "\n OperaciÃ³n terminada";
+    			resultado += "\n Operacion terminada";
     			panelDatos.actualizarInterfaz(resultado);
 			}
 			else
-				panelDatos.actualizarInterfaz("OperaciÃ³n cancelada por el usuario");
+				panelDatos.actualizarInterfaz("Operacion cancelada por el usuario");
 		}
     	catch (Exception e) {
 			
@@ -441,7 +447,7 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
     		String tipoDocumento = JOptionPane.showInputDialog (this, "Tipo de documento del operador? (CC,CE,TI o PA)", "Adicionar operador", JOptionPane.QUESTION_MESSAGE);
     		String nombre = JOptionPane.showInputDialog (this, "Nombre  del cliente?", "Adicionar operador", JOptionPane.QUESTION_MESSAGE);
     		String nacionalidad = JOptionPane.showInputDialog (this, "Nacionalidad del operador?", "Adicionar operador", JOptionPane.QUESTION_MESSAGE);
-    		String tipo = JOptionPane.showInputDialog (this, "Tipo de operador?", "Adicionar operador", JOptionPane.QUESTION_MESSAGE);
+    		String tipo = JOptionPane.showInputDialog (this, "Tipo de operador? UNIANDINO/VECINO", "Adicionar operador", JOptionPane.QUESTION_MESSAGE);
     		String username = JOptionPane.showInputDialog (this, "Username del operador?", "Adicionar operador", JOptionPane.QUESTION_MESSAGE);
     		String contrasena = JOptionPane.showInputDialog (this, "Contrasena del operador?", "Adicionar operador", JOptionPane.QUESTION_MESSAGE);
     		if (numDoc != null && tipoDocumento != null && nombre != null  && nacionalidad != null && tipo != null 
@@ -455,7 +461,7 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
         		}
         		String resultado = "En adicionarCliente\n\n";
         		resultado += "Cliente adicionado exitosamente: " + pN;
-    			resultado += "\n OperaciÃ³n terminada";
+    			resultado += "\n Operacion terminada";
     			panelDatos.actualizarInterfaz(resultado);
     		}
     		else
@@ -671,9 +677,9 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
     		{
     			long tbEliminados = alohAndes.eliminarReserva(lId,lId2);
 
-    			String resultado = "En eliminar TipoBebida\n\n";
-    			resultado += tbEliminados + " Tipos de bebida eliminados\n";
-    			resultado += "\n Operación terminada";
+    			String resultado = "En eliminar reserva\n\n";
+    			resultado += tbEliminados + " Reserva eliminada\n";
+    			resultado += "\n Operacion terminada";
     			panelDatos.actualizarInterfaz(resultado);
     		}
     		else
@@ -699,9 +705,9 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
 				long idTipo = Long.valueOf (idTipoStr);
 				long tbEliminados = alohAndes.eliminarAlojamiento(idTipo);
 
-				String resultado = "En eliminar Alojamiento\n\n";
-				resultado += tbEliminados + " Alojamientos eliminados\n";
-				resultado += "\n Operación terminada";
+				String resultado = "En eliminar oferta de alojamiento\n\n";
+				resultado += tbEliminados + " oferta(s) eliminada(s)\n";
+				resultado += "\n Operacion terminada";
 				panelDatos.actualizarInterfaz(resultado);
 			}
 			else
@@ -916,7 +922,7 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
     			}
     			String resultado = "En adicionarContrato\n\n";
     			resultado += "Contrato adicionado exitosamente: " + id;
-    			resultado += "\n OperaciÃ³n terminada";
+    			resultado += "\n Operacion terminada";
     			panelDatos.actualizarInterfaz(resultado);
     		}
     		else
@@ -940,10 +946,10 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
     	{
 			List <VOOferta> lista = alohAndes.darVOOfertas();
 
-			String resultado = "En listarTipoBebida";
-			resultado +=  "\n" + listarTiposBebida (lista);
+			String resultado = "En listarOfertas";
+			resultado +=  "\n" + listarOfertas(lista);
 			panelDatos.actualizarInterfaz(resultado);
-			resultado += "\n Operación terminada";
+			resultado += "\n Operacion terminada";
 		} 
     	catch (Exception e) 
     	{
@@ -1042,6 +1048,26 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
 			panelDatos.actualizarInterfaz(resultado);
 		}
     }
+
+    public void listarUsuarios( )
+    {
+    	try 
+    	{
+			List<VOUsuarios> lista = alohAndes.darVOUsuarios();
+
+			String resultado = "En listaUsuarios";
+			resultado +=  "\n" + listarUsuarios(lista);
+			panelDatos.actualizarInterfaz(resultado);
+			resultado += "\n Operacion terminada";
+		} 
+    	catch (Exception e) 
+    	{
+    		e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    }
     
     public void listarReservasOfertaEnFecha( )
     {
@@ -1053,10 +1079,10 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
     		
     		List <VOReserva> lista = alohAndes.darVOReservasOfertaEnFecha(idOferta, fechaI, fechaF);
 
-			String resultado = "En listarTipoBebida";
+			String resultado = "En listarReserva/oferta en fecha";
 			resultado +=  "\n" + listarReservas (lista);
 			panelDatos.actualizarInterfaz(resultado);
-			resultado += "\n Operación terminada";
+			resultado += "\n Operacion terminada";
 		} 
     	catch (Exception e) 
     	{
@@ -1114,9 +1140,9 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
      * @param lista - La lista con los tipos de bebida
      * @return La cadena con una líea para cada tipo de bebida recibido
      */
-    private String listarTiposBebida(List<VOOferta> lista) 
+    private String listarOfertas(List<VOOferta> lista) 
     {
-    	String resp = "Los tipos de bebida existentes son:\n";
+    	String resp = "Las ofertas son:\n";
     	int i = 1;
         for (VOOferta tb : lista)
         {
@@ -1124,6 +1150,18 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
         }
         return resp;
 	}
+
+	private String listarUsuarios(List<VOUsuarios> lista)
+	{
+		String resp = "Los usuarios son:\n";
+		int i = 1;
+		for (VOUsuarios tb : lista)
+		{
+			resp += i++ + ". " + tb.toString() + "\n";
+		}
+		return resp;
+	}
+
     
     private String listarOfertasApartamento(List<VOOfertaApartamento> lista) 
     {
@@ -1196,6 +1234,153 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
     }
 
    // RFC1
+  	public void listarDineroPorProveedor( ){
+	try 
+	{
+		 List<GananciaProveedor> lista = alohAndes.gananciaProveedores();
+
+		String resultado = "En listarDineroPorProveedor";
+		resultado +=  "\n" + listarDineroPorProveedor (lista);
+		panelDatos.actualizarInterfaz(resultado);
+		resultado += "\n Operación terminada";
+	} 
+	catch (Exception e) 
+	{ 
+//			e.printStackTrace();
+		String resultado = generarMensajeError(e);
+		panelDatos.actualizarInterfaz(resultado);
+	}
+	}
+	private String listarDineroPorProveedor(List<GananciaProveedor> lista) {
+	String resp = "Los proveedores con mas ganancias son: \n";
+	int i = 1;
+	for (GananciaProveedor tb : lista)
+	{
+		resp += i++ + ". " + tb.toString() + "\n";
+	}
+	return resp;
+	}
+
+	public void listarOfertasPopulares( )
+	{
+		try 
+		{
+			List <AlojamientosPopulares> lista = alohAndes.alojamientosPopulares();
+
+			String resultado = "En listarOfertasPopulares";
+			resultado +=  "\n" + listarOfertasPopulares (lista);
+			panelDatos.actualizarInterfaz(resultado);
+			resultado += "\n Operación terminada";
+		} 
+		catch (Exception e) 
+		{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
+
+	private String listarOfertasPopulares(List<AlojamientosPopulares> lista) {
+		String resp = "Los alojamientos mas populares son: \n";
+		int i = 1;
+		for (AlojamientosPopulares tb : lista) 
+		{
+			resp += i++ + ". " + tb.toString() + "\n";
+		}
+		return resp;
+	}
+
+	public void mostrarUsoAlohandes()
+	{
+		try 
+		{
+			List <UsoAlohandes> lista = alohAndes.usoAlohandes();
+
+			String resultado = "En listarUsoAlohandes";
+			resultado +=  "\n" + mostrarUsoAlohandes (lista);
+			panelDatos.actualizarInterfaz(resultado);
+			resultado += "\n Operacion terminada";
+		} 
+		catch (Exception e) 
+		{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
+
+	private String mostrarUsoAlohandes(List<UsoAlohandes> lista) {
+		String resp = "El uso de alohandes es: \n";
+		int i = 1;
+		for (UsoAlohandes tb : lista) 
+		{
+			resp += i++ + ". " + tb.toString() + "\n";
+		}
+		return resp;
+	}
+
+
+	public void mostrarUsoUsuario()
+	{
+		try 
+		{
+			
+			String id_usuario = JOptionPane.showInputDialog(this, "Ingrese el id del usuario", "RFC6",JOptionPane.QUESTION_MESSAGE);
+			List<UsoUsuario> lista = alohAndes.usoUsuario(id_usuario);
+
+			String resultado = "En listarUsoAlohandes";
+			resultado +=  "\n" + mostrarUsoUsuario (lista);
+			panelDatos.actualizarInterfaz(resultado);
+			resultado += "\n Operacion terminada";
+		} 
+		catch (Exception e) 
+		{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
+
+	private String mostrarUsoUsuario(List<UsoUsuario> lista) {
+		String resp = "El uso de del usuario de alohandes es: \n";
+		int i = 1;
+		for (UsoUsuario tb : lista) 
+		{
+			resp += i++ + ". " + tb.toString() + "\n";
+		}
+		return resp;
+	}
+		
+	public void RFC4()
+	{
+		try 
+		{
+			String servicios = JOptionPane.showInputDialog (this, "Que servicios busca? Escribalos separados por coma", "Buscar ofertas por servicio y fecha", JOptionPane.QUESTION_MESSAGE);
+			String fechaLlegadaStr = JOptionPane.showInputDialog (this, "Fecha de inicio en (DD/MM/YYYY)?", "Adicionar reserva", JOptionPane.QUESTION_MESSAGE);
+			String fechaSalidaStr = JOptionPane.showInputDialog (this, "Fecha fin en (DD/MM/YYYY)?", "Adicionar reserva", JOptionPane.QUESTION_MESSAGE);
+
+			if (servicios != null && fechaLlegadaStr != null && fechaSalidaStr != null)
+			{
+				List<VOOferta> lista = alohAndes.RFC4(servicios, fechaLlegadaStr, fechaSalidaStr);
+				String resultado = "En buscar ofertas por servicio y fecha\n\n";
+				resultado +=  "\n" + listarOfertas (lista);
+				panelDatos.actualizarInterfaz(resultado);
+				resultado += "\n Operación terminada";
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operacion cancelada por el usuario");
+			}
+		} 
+		catch (Exception e) 
+		{
+
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+
+	}
+		
 
    
 

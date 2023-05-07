@@ -64,6 +64,11 @@
 
 				},
 				{
+					"label": "Listar usuarios",
+					"event": "listarUsuarios"
+
+				},
+				{
 					"label": "Listar Ofertas",
 					"event": "listarOfertas"
 				},
@@ -113,11 +118,11 @@
 				[
 					{
 						"label": "RFC1",
-						"event": "RFC1"
+						"event": "listarDineroPorProveedor"
 					},
 					{
 						"label": "RFC2",
-						"event": "RFC2"
+						"event": "listarOfertasPopulares"
 					},
 					{
 						"label": "RFC3",
@@ -129,11 +134,11 @@
 					},
 					{
 						"label": "RFC5",
-						"event": "RFC5"
+						"event": "mostrarUsoAlohandes"
 					},
 					{
 						"label": "RFC6",
-						"event": "RFC6"
+						"event": "mostrarUsoUsuario"
 					},
 					{
 						"label": "RFC7",

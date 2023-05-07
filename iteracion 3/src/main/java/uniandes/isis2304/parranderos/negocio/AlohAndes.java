@@ -52,6 +52,18 @@ public class AlohAndes {
 	}
 
 
+
+	public List<GananciaProveedor> gananciaProveedores()
+	{
+		log.info ("Consultando ganancias");
+        List<GananciaProveedor> tiposBebida = pA.gananciaProveedores();
+//        System.out.println("Andadndoooooooooooo");
+//        System.err.println(tiposBebida.size());
+        log.info ("Consultando el numero de proveedores: " + tiposBebida.size() );
+        return tiposBebida;
+	}
+
+
 	public List<VOReserva> RF7(String tipoOferta,Long numReserva, String fechaI, String fechaF, Long docCliente, 
 			String tipoDoc, String fechaCancelacion, int cantidad, String[] adicionales) throws Exception
 	{
@@ -66,10 +78,10 @@ public class AlohAndes {
 			while(cont < cantidad && it.hasNext())
 			{
 				Oferta o = it.next();
-				if(ofertaTieneAdicionales(Long.parseLong(o.getId()), adicionales)){	
+				if(ofertaTieneAdicionales(Long.parseLong(o.getId_oferta()), adicionales)){	
 
 					log.info ("Adicionando reserva " + numReserva);
-					Reserva nueva = adicionarReserva(numReserva, fechaI, fechaF, Long.parseLong(o.getId()), docCliente, tipoDoc, fechaCancelacion);
+					Reserva nueva = adicionarReserva(numReserva, fechaI, fechaF, Long.parseLong(o.getId_oferta()), docCliente, tipoDoc, fechaCancelacion);
 					log.info ("Adicionando reserva: " + nueva);
 					res.add(nueva);
 					cont++;
@@ -114,7 +126,7 @@ public class AlohAndes {
 				if(primera != null){
 					Long nuevoNumReserva = Long.parseLong(pA.darUltimaReserva().getNum_reserva()) + 1;
 
-					Reserva nueva = adicionarReserva(nuevoNumReserva, fechaI, fechaF, Long.parseLong(primera.getId()),
+					Reserva nueva = adicionarReserva(nuevoNumReserva, fechaI, fechaF, Long.parseLong(primera.getId_oferta()),
 							Long.parseLong(r.getDoc_cliente()), r.getTipo_doc_cliente(), r.getCadenaFechaCancelacion());
 
 					if(nueva != null){
@@ -128,6 +140,10 @@ public class AlohAndes {
 			res += pA.cambiarOfertaDisponible(idOferta, false);
 			
 			
+		}
+		else
+		{
+			res = pA.cambiarOfertaDisponible(idOferta, false);
 		}
 
 		return res;
@@ -143,7 +159,7 @@ public class AlohAndes {
 		List<Oferta> ofertas = pA.darOfertasPorTipo(tipoOferta);
 		for(Oferta o: ofertas){
 
-			List<Reserva> reservasEnfecha = pA.darReservasOfertaEnFecha(Long.parseLong(o.getId()), fechaI, fechaF);
+			List<Reserva> reservasEnfecha = pA.darReservasOfertaEnFecha(Long.parseLong(o.getId_oferta()), fechaI, fechaF);
 			if(reservasEnfecha.size()== 0){
 
 				res.add(o);
@@ -166,10 +182,11 @@ public class AlohAndes {
 		boolean res =  false;
 		if(adicionales.length == 1 && adicionales[0].equals(""))
 			res = true;
+			System.out.println("HOLA");
 		for(String a: adicionales){
 
 			a = a.trim();
-			Adicional adi= pA.darAdicionalesPorOfertaYNombre(idOferta, a);
+			Adicional adi= pA.darAdicionalesPorOfertaYNombre(idOferta, a);   // Aca se putea
 			if(adi != null){
 				System.out.println(adi.toString());
 				res = true;
@@ -218,7 +235,7 @@ public class AlohAndes {
 		return pj;
 	}
 
-	public Oferta adicionarOferta(String id, String id_operador, String tipoOferta, Boolean disponible, Integer precio, String fechaInicio)
+	public Oferta adicionarOferta(Long id, Long id_operador, String tipoOferta, Boolean disponible, Integer precio, String fechaInicio)
 	{
 		log.info ("Adicionando oferta " + id);
 		Oferta o = pA.adicionarOferta(id, id_operador, tipoOferta, disponible, precio, fechaInicio);
@@ -234,10 +251,10 @@ public class AlohAndes {
 	}
 
 	public Reserva adicionarReserva(Long numeroReserva, String fechaInicio, String fechaFin, Long idOferta, 
-			Long docCliente, String tipoDoc, String fechaCandelacion)
+			Long docCliente, String tipoDoc, String fechaCancelacion)
 	{
 		log.info ("Adicionando reserva " + numeroReserva);
-		Reserva r = pA.adicionarReservas(numeroReserva, fechaInicio, fechaFin, idOferta, docCliente, tipoDoc, fechaCandelacion);
+		Reserva r = pA.adicionarReservas(numeroReserva, fechaInicio, fechaFin, idOferta, docCliente, tipoDoc, fechaCancelacion);
 		log.info ("Adicionando reserva: " +r);
 		return r;
 	}
@@ -258,7 +275,7 @@ public class AlohAndes {
 		return resp;
 	}
 
-	public long eliminarAlojamiento (long id)
+	public long eliminarAlojamiento (Long id)
 	{
 		log.info ("Eliminando reserva por id: " + id);
         long resp = pA.eliminarAlojamientoPorId(id);		
@@ -429,6 +446,34 @@ public class AlohAndes {
 		log.info ("Consultando Tipos de bebida: " + tiposBebida.size() + " existentes");
 		return tiposBebida;
 	}
+
+	/**
+	 * Retorna la lista de los alojamientos mas populares
+	 * @return Lista de alojamientos populares
+	 */
+	public List<AlojamientosPopulares> alojamientosPopulares ()
+	{
+		log.info ("Consultando Alojamientos populares");
+        List<AlojamientosPopulares> tiposBebida = pA.alojamientosPopulares();	
+        log.info ("Consultando los alojamientos populares: " + tiposBebida.size() );
+        return tiposBebida;
+	}
+
+	public List<UsoAlohandes> usoAlohandes ()
+	{
+		log.info ("Consultando uso Alohandes");
+        List<UsoAlohandes> tiposBebida = pA.usoAlohandes();	
+        log.info ("Consultando los alojamientos populares: " + tiposBebida.size() );
+        return tiposBebida;
+	}
+
+	public List<UsoUsuario> usoUsuario (String id_usario)
+	{
+		log.info ("Consultando uso Usuario");
+		List<UsoUsuario> tiposBebida = pA.usoUsuario(id_usario);	
+		log.info ("Consultando uso de los usuarios: " + tiposBebida.size() );
+		return tiposBebida;
+	}
 	/**
 	 * Encuentra todos los tipos de bebida en Parranderos y los devuelve como una lista de VOTipoBebida
 	 * Adiciona entradas al log de la aplicación
@@ -436,13 +481,13 @@ public class AlohAndes {
 	 */
 	public List<VOOferta> darVOOfertas()
 	{
-		log.info ("Generando los VO de Tipos de bebida");        
+		log.info ("Generando los VO de ofertas");        
 		List<VOOferta> voTipos = new LinkedList<VOOferta> ();
 		for (Oferta tb : pA.darOfertas())
 		{
 			voTipos.add (tb);
 		}
-		log.info ("Generando los VO de Tipos de bebida: " + voTipos.size() + " existentes");
+		log.info ("Generando los VO de ofertas: " + voTipos.size() + " existentes");
 		return voTipos;
 	}
 	/**
@@ -461,7 +506,7 @@ public class AlohAndes {
 
 	public List<OfertaApartamento> darOfertasApartamento()
 	{
-		log.info ("Consultando Tipos de bebida");
+		log.info ("Consultando ofertas apartamento");
 		List<OfertaApartamento> tiposBebida = pA.darOfertasApartamento();	
 		log.info ("Consultando Tipos de bebida: " + tiposBebida.size() + " existentes");
 		return tiposBebida;
@@ -469,13 +514,45 @@ public class AlohAndes {
 
 	public List<VOOfertaApartamento> darVOOfertasApartamento()
 	{
-		log.info ("Generando los VO de Tipos de bebida");        
+		log.info ("Generando los VO de oferta apartamento");        
 		List<VOOfertaApartamento> voTipos = new LinkedList<VOOfertaApartamento> ();
 		for (OfertaApartamento tb : pA.darOfertasApartamento())
 		{
 			voTipos.add (tb);
 		}
-		log.info ("Generando los VO de Tipos de bebida: " + voTipos.size() + " existentes");
+		log.info ("Generando los VO de oferta apartamento: " + voTipos.size() + " existentes");
+		return voTipos;
+	}
+
+	public List<VOOferta> RFC4(String servicios, String fechaLlegadaStr, String fechaSalidaStr)
+	{
+		log.info ("Generando los VO de ofertas");        
+		List<VOOferta> voTipos = new LinkedList<VOOferta> ();
+		for (VOOferta tb : pA.RFC4(servicios, fechaLlegadaStr, fechaSalidaStr))
+		{
+			voTipos.add (tb);
+		}
+		log.info ("Generando los VO de ofertas: " + voTipos.size() + " existentes");
+		return voTipos;
+	}
+
+	public List<Usuarios> darUsuarios()
+	{
+		log.info ("Consultando usuarios");
+		List<Usuarios> usuarios = pA.darUsuarios();	
+		log.info ("Consultando usuarios: " + usuarios.size() + " existentes");
+		return usuarios;
+	}
+
+	public List<VOUsuarios> darVOUsuarios()
+	{
+		log.info ("Generando los VO de oferta apartamento");        
+		List<VOUsuarios> voTipos = new LinkedList<VOUsuarios> ();
+		for (Usuarios tb : pA.darUsuarios())
+		{
+			voTipos.add (tb);
+		}
+		log.info ("Generando los VO de usuarios: " + voTipos.size() + " existentes");
 		return voTipos;
 	}
 }

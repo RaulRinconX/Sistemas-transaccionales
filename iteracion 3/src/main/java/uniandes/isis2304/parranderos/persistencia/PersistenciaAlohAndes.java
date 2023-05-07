@@ -32,8 +32,10 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import uniandes.isis2304.parranderos.negocio.Adicional;
+import uniandes.isis2304.parranderos.negocio.AlojamientosPopulares;
 import uniandes.isis2304.parranderos.negocio.Cliente;
 import uniandes.isis2304.parranderos.negocio.Contrato;
+import uniandes.isis2304.parranderos.negocio.GananciaProveedor;
 import uniandes.isis2304.parranderos.negocio.Oferta;
 import uniandes.isis2304.parranderos.negocio.OfertaApartamento;
 import uniandes.isis2304.parranderos.negocio.OfertaEsporadica;
@@ -43,6 +45,10 @@ import uniandes.isis2304.parranderos.negocio.OfertaViviendaUniversitaria;
 import uniandes.isis2304.parranderos.negocio.PersonaJuridica;
 import uniandes.isis2304.parranderos.negocio.PersonaNatural;
 import uniandes.isis2304.parranderos.negocio.Reserva;
+import uniandes.isis2304.parranderos.negocio.UsoAlohandes;
+import uniandes.isis2304.parranderos.negocio.UsoUsuario;
+import uniandes.isis2304.parranderos.negocio.Usuarios;
+import uniandes.isis2304.parranderos.negocio.VOOferta;
 
 
 
@@ -146,9 +152,10 @@ public class PersistenciaAlohAndes
 		tablas.add ("CLIENTES");
 		tablas.add("PERSONASNATURALES");
 		tablas.add("PERSONASJURIDICAS");
+		tablas.add("PROVEEDORES");
 		tablas.add("OFERTAS");
 		tablas.add("ADICIONALES");
-		tablas.add("INTERSEAN");
+		tablas.add("INTERESAN");
 		tablas.add("RESERVAS");
 		tablas.add("CONTRATOS");
 		tablas.add("OFERTAAPARTAMENTO");
@@ -156,7 +163,6 @@ public class PersistenciaAlohAndes
 		tablas.add("OFERTAHABITACIONDIARIA");
 		tablas.add("OFERTAHABITACIONMENSUAL");
 		tablas.add("OFERTAVIVIENDAUNIVERSITARIA");
-		tablas.add("PROVEEDORES");
 		tablas.add("USUARIOS");
 	}
 
@@ -235,6 +241,7 @@ public class PersistenciaAlohAndes
 		sqlCliente = new SQLCliente(this);
 		sqlPersonaNatural = new SQLPersonaNatural(this);
 		sqlPersonaJuridica = new SQLPersonaJuridica(this);
+		sqlProveedores= new SQLProveedores(this);
 		sqlOferta= new SQLOferta(this);
 		sqlAdicional= new SQLAdicional(this);
 		sqlReserva= new SQLReserva(this);
@@ -244,7 +251,6 @@ public class PersistenciaAlohAndes
 		sqlOfertaHabitacionDiaria= new SQLOfertaHabitacionDiaria(this);
 		sqlOfertaHabitacionMensual= new SQLOfertaHabitacionMensual(this);
 		sqlOfertaViviendaUniversitaria= new SQLOfertaViviendaUniversitaria(this);
-		sqlProveedores= new SQLProveedores(this);
 		sqlUsuarios= new SQLUsuarios(this);
 	}
 
@@ -274,6 +280,11 @@ public class PersistenciaAlohAndes
 		return tablas.get (3);
 	}
 
+	public String darTablaProveedores()
+	{
+		return tablas.get (4);
+	}
+
 	public String darTablaOfertas()
 	{
 		return tablas.get (4);
@@ -286,45 +297,41 @@ public class PersistenciaAlohAndes
 
 	public String darTablaInteresan()
 	{
-		return tablas.get (6);
+		return tablas.get (7);
 	}
 
 	public String darTablaReservas()
 	{
+		System.out.println(tablas);
 		return tablas.get (7);
 	}
 
 	public String darTablaContratos()
 	{
-		return tablas.get (8);
+		return tablas.get (9);
 	}
 
 	public String darTablaOfertaApartamento()
 	{
-		return tablas.get (9);
+		return tablas.get (10);
 	}
 
 	public String darTablaOfertaEsporadica()
 	{
-		return tablas.get (10);
+		return tablas.get (11);
 	}
 
 	public String darTablaOfertaHabitacionDiaria()
 	{
-		return tablas.get(11);
+		return tablas.get(12);
 	}
 
 	public String darTablaOfertaHabitacionMensual()
 	{
-		return tablas.get (12);
-	}
-
-	public String darTablaOfertaViviendaUniversitaria()
-	{
 		return tablas.get (13);
 	}
 
-	public String darTablaProveedores()
+	public String darTablaOfertaViviendaUniversitaria()
 	{
 		return tablas.get (14);
 	}
@@ -425,6 +432,11 @@ public class PersistenciaAlohAndes
 		}
 	}
 
+	public List<Usuarios> darUsuarios()
+	{
+		return sqlUsuarios.darUsuarios(pmf.getPersistenceManager());
+	}
+
 
 	public PersonaJuridica adicionarPersonaJuridica(Long nit, String nombre, String tipo, String horaApertura,
 			String horaCierre, String userName, String contrasena) 
@@ -479,7 +491,7 @@ public class PersistenciaAlohAndes
 			String[] fi =  fechaInicio.split("/");
 			Date i = new Date(Integer.parseInt(fi[2]), Integer.parseInt(fi[1]), Integer.parseInt(fi[0]));
 
-			return new Oferta(""+id, id_operador, tipo_oferta, d, precio, i);
+			return new Oferta(""+id, ""+id_operador, tipo_oferta, d, precio, i);
 		}
 		catch (Exception e)
 		{
@@ -629,12 +641,12 @@ public class PersistenciaAlohAndes
 		}
 	}
 
-	public List<Reserva> darReservasPorAlojamiento (long idAlojamiento) 
+	public List<Reserva> darReservasPorAlojamiento (Long idAlojamiento) 
 	{
 		return sqlReserva.darReservasPornumero(pmf.getPersistenceManager(), idAlojamiento);
 	}
 
-	public long eliminarAlojamientoPorId(long id) 
+	public long eliminarAlojamientoPorId(Long id) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
@@ -915,7 +927,7 @@ public class PersistenciaAlohAndes
 	 */
 	public List<Oferta> darOfertas ()
 	{
-		return sqlOferta.darOfertas (pmf.getPersistenceManager());
+		return sqlOferta.darOfertas(pmf.getPersistenceManager());
 	}
 	
 	public List<Oferta> darOfertasPorTipo (String tipo)
@@ -968,7 +980,35 @@ public class PersistenciaAlohAndes
 	{
 		return sqlOfertaApartamento.darOfertasApartamento(pmf.getPersistenceManager());
 	}
+
+	public List<GananciaProveedor> gananciaProveedores()
+	{
+		return sqlProveedores.gananciaProveedores(pmf.getPersistenceManager());
+	}
+
+	/**
+	 * RFC2 - Método que retorna los 20 Alojamientos más popolares en Alohandes
+	 * @return La lista de objetos AlojamientosPopulares
+	 */
+	public List<AlojamientosPopulares> alojamientosPopulares ()
+	{
+		return sqlOferta.alojamientosPopulares(pmf.getPersistenceManager());
+	}
+
+	public List<UsoAlohandes> usoAlohandes ()
+	{
+		return sqlUsuarios.darUso(pmf.getPersistenceManager());
+	}
+
+	public List<UsoUsuario> usoUsuario (String id_usuario)
+	{
+		return sqlReserva.darUsoUsuario(pmf.getPersistenceManager(), id_usuario);
+	}
 	
+	public List<VOOferta> RFC4(String servicios, String fechaLlegadaStr, String fechaSalidaStr)
+	{
+		return sqlOferta.RFC4(pmf.getPersistenceManager(), servicios, fechaLlegadaStr, fechaSalidaStr);
+	}
 	
 	/**
 	 * Método que consulta todas las tuplas en la tabla TipoBebida con un identificador dado

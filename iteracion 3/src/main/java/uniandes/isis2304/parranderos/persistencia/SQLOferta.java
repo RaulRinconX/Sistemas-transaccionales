@@ -5,7 +5,9 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
+import uniandes.isis2304.parranderos.negocio.AlojamientosPopulares;
 import uniandes.isis2304.parranderos.negocio.Oferta;
+import uniandes.isis2304.parranderos.negocio.VOOferta;
 
 
 public class SQLOferta {
@@ -62,9 +64,8 @@ public class SQLOferta {
 	{
 		System.out.println(idOferta);
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaOfertas() + " WHERE id_oferta = ?");
-		q.setResultClass(Oferta.class);
+		//q.setResultClass(Oferta.class);
 		q.setParameters(idOferta);
-		System.out.println();
 		return (Oferta) q.executeUnique();
 	}
 	
@@ -93,10 +94,67 @@ public class SQLOferta {
 	
 	public long cambiarDisponible (PersistenceManager pm,Long idOferta, Boolean disponible)
 	{
-		Query q = pm.newQuery(SQL, "UPDATE  " + pp.darTablaOfertas() +" SET disponible = ? "+ " WHERE id_oferta = ?");
+		// si disponible es true entonces 1 sino 0
+		Integer disp = 0;
+		if(disponible)
+			disp = 1;
+		else
+			disp = 0;
+		Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaOfertas() +" SET disponible = ? "+ " WHERE id_oferta = ?");
 		//q.setResultClass(Oferta.class);
 		//System.out.println(q.executeList().size());
-		q.setParameters(disponible, idOferta);
+		q.setParameters(disp, idOferta);
 		return (long) q.executeUnique();
 	}
+
+	public List<AlojamientosPopulares> alojamientosPopulares (PersistenceManager pm)
+	{
+		Query q = pm.newQuery(SQL, "SELECT O.*" +
+								   " FROM OFERTAS O, (SELECT * FROM(SELECT ID_OFERTA, COUNT(ID_OFERTA) AS GUSTADO" +
+							       " FROM INTERESAN"+
+							       " GROUP BY ID_OFERTA"+
+							       " ORDER BY GUSTADO DESC)"+
+								   " WHERE ROWNUM <=20)POPULARES WHERE O.id_oferta= POPULARES.ID_OFERTA");
+		q.setResultClass(AlojamientosPopulares.class);
+		return (List<AlojamientosPopulares>) q.executeList();
+	}
+
+	public List<VOOferta> RFC4 (PersistenceManager pm, String adicionales, String fecha_inicio, String fecha_fin)
+	{		
+		
+		// quiero que me separes el string adicionales por comas
+		String[] adicional = adicionales.split(",");
+		String adicionalFinal = "";
+
+		for(int i = 0; i < adicional.length; i++)
+		{
+			if (i == 0){
+				adicional[i] = "('"+adicional[i]+ "'";
+			}
+			else if (i == adicional.length-1){
+				adicional[i] = ",'"+ adicional[i] + "')";
+			}
+			else{
+			adicional[i] = ",'" + adicional[i] + "'";
+			}
+
+			adicionalFinal += adicional[i];
+		}
+
+		// juntame lo que da el for en un solo string: GIMNASIO,RESTAURANTE,SALA DE ESTUDIO,TEATRO,MONITORIAS,JUEGOS
+		Query q = pm.newQuery(SQL, "SELECT ofertas.id_oferta, ofertas.tipo_oferta" +
+								   " FROM ofertas" +
+								   " JOIN ADICIONALES"+ 
+								   " ON ofertas.id_oferta = ADICIONALES.id_oferta" +
+								   " WHERE ADICIONALES.NOMBRE IN "+adicionalFinal+
+								   " AND NOT EXISTS" +
+								   " (SELECT * FROM RESERVAS r WHERE r.id_oferta = ofertas.id_oferta AND" +
+								   " r.fecha_inicio <= '"+ fecha_inicio + "' AND r.fecha_fin >= '"+fecha_fin+ "')"+
+								   " GROUP BY ofertas.id_oferta, ofertas.tipo_oferta");
+		
+							
+		q.setResultClass(Oferta.class);
+		return (List<VOOferta>) q.executeList();
+	}
+
 }

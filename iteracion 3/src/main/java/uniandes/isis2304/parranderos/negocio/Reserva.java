@@ -21,12 +21,12 @@ public class Reserva implements VOReserva{
 
 	public Reserva() {
 
-		this.num_reserva = "Defailt";
+		this.num_reserva = "Default";
 		this.fecha_inicio = null;
 		this.fecha_fin = null;
-		this.id_oferta = "Defailt";
-		this.doc_cliente = "Defailt";
-		this.tipo_doc_cliente = "Defailt";
+		this.id_oferta = "Default";
+		this.doc_cliente = "Default";
+		this.tipo_doc_cliente = "Default";
 		this.fecha_cancelacion = null;
 	}
 
@@ -149,7 +149,7 @@ public class Reserva implements VOReserva{
 
 	@Override
 	public String toString() {
-		return "Reserva [num_reserva=" + num_reserva + ", fecha_inicio=" + fecha_inicio + ", fecha_fin=" + fecha_fin
+		return "Reserva [num_reserva=" + num_reserva + " , fecha_inicio=" + fecha_inicio + ", fecha_fin=" + fecha_fin
 				+ ", id_oferta=" + id_oferta + ", doc_cliente=" + doc_cliente + ", tipo_doc_cliente=" + tipo_doc_cliente
 				+ ", fecha_cancelacion=" + fecha_cancelacion + "]";
 	}

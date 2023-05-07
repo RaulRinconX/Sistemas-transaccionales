@@ -1,5 +1,13 @@
 package uniandes.isis2304.parranderos.persistencia;
 
+import java.util.List;
+
+import javax.jdo.PersistenceManager;
+import javax.jdo.Query;
+
+import uniandes.isis2304.parranderos.negocio.UsoAlohandes;
+import uniandes.isis2304.parranderos.negocio.Usuarios;
+
 public class SQLUsuarios {
 
     	/* ****************************************************************
@@ -28,5 +36,25 @@ public class SQLUsuarios {
     {
         this.pp = pp;
     }
+
+	public List<Usuarios> darUsuarios(PersistenceManager pm)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM USUARIOS ");
+		//q.setResultClass(Oferta.class);
+		//System.out.println(q.executeList().size());
+		return (List<Usuarios>) q.executeResultList(Usuarios.class);
+	}
+
+	public List<UsoAlohandes> darUso(PersistenceManager pm)
+	{
+		Query q = pm.newQuery(SQL, "SELECT id_usuario, tipo_usuario, nombre,"+
+								   " CASE"+ 
+		 						   " WHEN EXISTS (SELECT 1 FROM clientes c WHERE c.numero_documento = u.id_usuario) THEN 'Cliente'"+
+		 						   " WHEN EXISTS (SELECT 1 FROM proveedores p WHERE p.id_proveedor = u.id_usuario) THEN 'Proveedor'"+
+		  						   " ELSE 'No especificado'"+
+								   " END AS uso_usuario"+
+								   " FROM usuarios u");
+		return (List<UsoAlohandes>) q.executeResultList(UsoAlohandes.class);
+	}
     
 }

@@ -14,7 +14,7 @@ public class Oferta implements VOOferta{
 	
 	private int precio;
 
-	private Date fechaInicio;
+	private Date fecha_inicio;
 
 
 	public Oferta() {
@@ -23,25 +23,26 @@ public class Oferta implements VOOferta{
 		this.tipo_oferta = "Default";
 		this.disponible = 0;
 		this.precio = 0;
-		this.fechaInicio = null;
+		this.fecha_inicio = null;
 		
 	}
 
 
 
 
-	public Oferta(String id_oferta, String id_operador, String tipo_oferta, int disponible, int precio, Date fechaInicio) {
+	public Oferta(String id_oferta, String id_operador, String tipo_oferta, int disponible, int precio, Date fecha_inicio) {
 		this.id_oferta = id_oferta;
+		this.id_operador = id_operador;
 		this.tipo_oferta = tipo_oferta;
 		this.disponible = disponible;
 		this.precio = precio;
-		this.fechaInicio = fechaInicio;
+		this.fecha_inicio = fecha_inicio;
 	}
 	
 
 
 
-	public String getId() {
+	public String getId_oferta() {
 		return id_oferta;
 	}
 
@@ -89,27 +90,17 @@ public class Oferta implements VOOferta{
 		this.precio = precio;
 	}
 
-	public Date getFechaInicio() {
-		return fechaInicio;
+	public Date getFecha_inicio() {
+		return fecha_inicio;
 	}
 
 
-	public void setFechaInicio(Date fechaInicio) {
-		this.fechaInicio = fechaInicio;
+	public void setFecha_inicio(Date fecha_inicio) {
+		this.fecha_inicio = fecha_inicio;
 	}
-
-	
-
-	@Override
-	public String toString() {
-		return "Oferta [id_oferta=" + id_oferta + "id_operador="+ id_operador + ", tipo_oferta=" + tipo_oferta + ", disponible=" + disponible
-				+ ", precio=" + precio + ", fecha_inicio="+ fechaInicio + "]";
-	}
-
-
 
 	public String getCadenaFechaInicial(){
-		String fecha =""+  fechaInicio;
+		String fecha =""+  fecha_inicio;
 		
 		String año = fecha.split(" ")[0].split("-")[0];
 		String mes = fecha.split(" ")[0].split("-")[1];
@@ -127,4 +118,11 @@ public class Oferta implements VOOferta{
 		Oferta tb = (Oferta) tipo;
 		return id_oferta == tb.id_oferta && ((String) tipo).equalsIgnoreCase (tb.tipo_oferta);
 	}
+
+	@Override
+	public String toString() {
+		return "Oferta [id_oferta=" + id_oferta + " ,id_operador="+ id_operador + ", tipo_oferta=" + tipo_oferta + ", disponible=" + disponible
+				+ ", precio=" + precio + ", fecha_inicio="+ fecha_inicio + "]";
+	}
+
 }

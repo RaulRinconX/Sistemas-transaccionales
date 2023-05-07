@@ -7,6 +7,7 @@ import javax.jdo.Query;
 
 import uniandes.isis2304.parranderos.negocio.Oferta;
 import uniandes.isis2304.parranderos.negocio.Reserva;
+import uniandes.isis2304.parranderos.negocio.UsoUsuario;
 
 public class SQLReserva {
 
@@ -37,12 +38,12 @@ public class SQLReserva {
 	}
 	
 	public long adicionarReserva (PersistenceManager pm, Long numeroReserva, String fechaInicio, String fechaFin, Long idOferta, 
-			Long docCliente, String tipoDoc, String fechaCandelacion) 
+			Long docCliente, String tipoDoc, String fechaCancelacion) 
 	{
        System.out.println(docCliente);
 		Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaReservas() 
        + "(num_reserva, fecha_inicio, fecha_fin, id_oferta, doc_cliente, tipo_doc_cliente, fecha_cancelacion) values (?, ?, ?, ?, ?, ?, ?)");
-       q.setParameters(numeroReserva, fechaInicio, fechaFin, idOferta, docCliente, tipoDoc,fechaCandelacion);
+       q.setParameters(numeroReserva, fechaInicio, fechaFin, idOferta, docCliente, tipoDoc,fechaCancelacion);
        return (long) q.executeUnique();
 	}
 	
@@ -65,7 +66,7 @@ public class SQLReserva {
 	
 	public List<Reserva> darReservas(PersistenceManager pm)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaReservas() );
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaReservas());
 		//q.setResultClass(Oferta.class);
 		//System.out.println(q.executeList().size());
 		return (List<Reserva>) q.executeResultList(Reserva.class);
@@ -106,5 +107,17 @@ public class SQLReserva {
 		//System.out.println(q.executeList().size());
 		return (List<Reserva>) q.executeResultList(Reserva.class);
 	}
-	
+
+	public List<UsoUsuario> darUsoUsuario(PersistenceManager pm, String id_usuario)
+	{
+		Query q = pm.newQuery(SQL, "SELECT adicionales.nombre as SERVICIO, r.num_reserva, TRUNC(r.fecha_fin) - TRUNC(r.fecha_inicio) AS numero_noches, adicionales.id_oferta, ofertas.precio"+
+								   " FROM reservas r"+
+								   " INNER JOIN ofertas ON r.id_oferta = ofertas.id_oferta"+
+								   " INNER JOIN clientes u ON r.doc_cliente = u.numero_documento"+
+								   " INNER JOIN adicionales ON ofertas.id_oferta = adicionales.id_oferta"+
+								   " WHERE u.numero_documento = "+ id_usuario );
+		return (List<UsoUsuario>) q.executeResultList(UsoUsuario.class);
+	}
+
+
 }
