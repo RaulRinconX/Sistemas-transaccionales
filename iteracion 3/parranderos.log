@@ -1370,3 +1370,57 @@ Conexión cerrada
 18:28:41,354 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
 18:28:41,358 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
 18:28:41,392 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+01:41:23,757 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+01:41:23,757 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+01:41:23,790 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+01:43:59,496 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+01:43:59,496 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+01:43:59,526 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+01:44:57,453 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando pj SINFONIA
+01:44:58,136 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando pj: PersonaJuridica [nit=7777777, horaApertura=5:00, horaCierre=20:00, tipo=HOTEL, ofertasViviendaUniversitaria=null, ofertasHabitacionDiaria=null]
+01:45:28,608 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando oferta 4679046
+01:45:28,727 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaAlohAndes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO OFERTAS(id_oferta, tipo_oferta, disponible, precio) values (?, ?, ?, ?)".
+ORA-01400: no se puede realizar una inserción NULL en ("ISIS2304B28202310"."OFERTAS"."ID_OPERADOR")
+
+01:45:28,889 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando oferta: null
+01:46:06,949 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando oferta vivienda universitaria 4679046
+01:46:07,010 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaAlohAndes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO OFERTAVIVIENDAUNIVERSITARIA(id, capacidad, duracion, es_compartida, id_operador) values (?, ?, ?, ?, ?)".
+ORA-02290: restricción de control (ISIS2304B28202310.OFERTAVIVIENDAUNIVERSITA_CHK2) violada
+
+01:46:07,122 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando oferta vivienda universitaria: null
+01:46:54,291 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Clientes
+01:47:29,557 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+01:47:29,558 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+01:47:29,581 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+01:47:39,423 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida
+01:50:36,432 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida
+02:08:00,026 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida
+02:08:25,381 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida
+02:08:25,717 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida: 8 existentes
+02:08:28,111 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Clientes
+02:08:38,189 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+02:08:38,189 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+02:08:38,209 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:08:45,801 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida
+02:10:38,907 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+02:10:38,908 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+02:10:38,922 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:10:54,696 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida
+02:10:54,815 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida: 8 existentes
+02:11:01,084 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida
+02:11:01,162 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida: 8 existentes
+02:11:02,558 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida
+02:11:02,631 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida: 5 existentes
+02:11:05,482 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida
+02:11:43,743 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+02:11:43,744 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+02:11:43,772 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:20:31,391 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+02:20:31,392 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+02:20:31,429 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:20:36,770 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida
+02:36:44,937 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+02:36:44,938 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+02:36:44,952 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:38:55,769 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando oferta 90909090
+02:38:56,218 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando oferta: Oferta [id_oferta=90909090, tipo_oferta=VIVIENDA UNIVERSITARIA, disponible=1, precio=818181]

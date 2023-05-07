@@ -311,15 +311,20 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
     	{
     		Long id = Long.parseLong(JOptionPane.showInputDialog (this, "Id de la oferta?", "Adicionar Oferta", JOptionPane.QUESTION_MESSAGE));
     		
+			Long id_operador = Long.parseLong(JOptionPane.showInputDialog (this, "Id proveedor?", "Adicionar Oferta", JOptionPane.QUESTION_MESSAGE));
+
     		String tipoOferta = JOptionPane.showInputDialog (this, "Tipo de la oferta (VIVIENDA UNVERSITARIA, HABITACION DIARIA, "
     				+ "HABITACION MENSUAL, ESPORADICA O APARTAMENTO)?", "Adicionar Oferta", JOptionPane.QUESTION_MESSAGE);
     		
     		Boolean disponible = Boolean.parseBoolean(JOptionPane.showInputDialog(this, "¿Está disponible? (true/false)","Adicionar Oferta", JOptionPane.QUESTION_MESSAGE));
     		
     		Integer precio = Integer.parseInt(JOptionPane.showInputDialog(this,"Ingrese el precio","Adicionar Oferta",JOptionPane.QUESTION_MESSAGE));
+
+			String fechaInicio = JOptionPane.showInputDialog (this, "Ingrese fecha de activado de oferta", "Adicionar oferta", JOptionPane.QUESTION_MESSAGE);
+
     		if (id != null && tipoOferta != null)
     		{
-        		Oferta o = alohAndes.adicionarOferta(id, tipoOferta, disponible, precio);
+        		Oferta o = alohAndes.adicionarOferta(id, id_operador, tipoOferta, disponible, precio, fechaInicio);
 
         		if(tipoOferta.equalsIgnoreCase("vivienda universitaria"))
         			adicionarOfertaViviendaUniversitaria(id, disponible, precio);
@@ -343,7 +348,7 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
         		}
         		String resultado = "En adicionarOferta\n\n";
         		resultado += "Oferta adicionado exitosamente: " + o;
-    			resultado += "\n OperaciÃ³n terminada";
+    			resultado += "\n Operacion terminada";
     			panelDatos.actualizarInterfaz(resultado);
     		}
     		else
@@ -639,12 +644,12 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
         		}
         		String resultado = "En adicionarCliente\n\n";
         		resultado += "Cliente adicionado exitosamente: " + c;
-    			resultado += "\n OperaciÃ³n terminada";
+    			resultado += "\n Operacion terminada";
     			panelDatos.actualizarInterfaz(resultado);
     		}
     		else
     		{
-    			panelDatos.actualizarInterfaz("OperaciÃ³n cancelada por el usuario");
+    			panelDatos.actualizarInterfaz("Operacion cancelada por el usuario");
     		}
 		} 
     	catch (Exception e) 
@@ -1189,6 +1194,8 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
 			panelDatos.actualizarInterfaz(resultado);
 		}
     }
+
+   // RFC1
 
    
 

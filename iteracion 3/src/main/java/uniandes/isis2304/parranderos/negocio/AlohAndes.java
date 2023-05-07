@@ -218,10 +218,10 @@ public class AlohAndes {
 		return pj;
 	}
 
-	public Oferta adicionarOferta(Long id, String tipoOferta, Boolean disponible, Integer precio)
+	public Oferta adicionarOferta(String id, String id_operador, String tipoOferta, Boolean disponible, Integer precio, String fechaInicio)
 	{
 		log.info ("Adicionando oferta " + id);
-		Oferta o = pA.adicionarOferta(id, tipoOferta, disponible, precio);
+		Oferta o = pA.adicionarOferta(id, id_operador, tipoOferta, disponible, precio, fechaInicio);
 		log.info ("Adicionando oferta: " + o);
 		return o;
 	}

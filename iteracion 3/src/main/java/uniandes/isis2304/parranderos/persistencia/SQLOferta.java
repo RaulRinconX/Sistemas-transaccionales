@@ -37,10 +37,10 @@ public class SQLOferta {
 		this.pp = pp;
 	}
 	
-	public long adicionarOferta (PersistenceManager pm, Long id, String tipoOferta, Boolean disponible, Integer precio) 
+	public long adicionarOferta (PersistenceManager pm, Long id, Long idOperador,  String tipoOferta,  Boolean disponible, Integer precio, String  fechaInicio) 
 	{
-       Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaOfertas() + "(id_oferta, tipo_oferta, disponible, precio) values (?, ?, ?, ?)");
-       q.setParameters(id, tipoOferta, disponible, precio);
+       Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaOfertas() + "(ID_OFERTA, ID_OPERADOR, TIPO_OFERTA, DISPONIBLE, PRECIO , FECHA_INICIO) values (?, ?, ?, ?, ?, ?)");
+       q.setParameters(id, idOperador, tipoOferta, disponible, precio, fechaInicio);
        return (long) q.executeUnique();
 	}
 	

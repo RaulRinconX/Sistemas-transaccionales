@@ -124,6 +124,10 @@ public class PersistenciaAlohAndes
 
 	private SQLOfertaEsporadica sqlOfertaEsporadica;
 
+	private SQLProveedores sqlProveedores;
+
+	private SQLUsuarios sqlUsuarios;
+
 	/* ****************************************************************
 	 * 			MÃ©todos del MANEJADOR DE PERSISTENCIA
 	 *****************************************************************/
@@ -152,6 +156,8 @@ public class PersistenciaAlohAndes
 		tablas.add("OFERTAHABITACIONDIARIA");
 		tablas.add("OFERTAHABITACIONMENSUAL");
 		tablas.add("OFERTAVIVIENDAUNIVERSITARIA");
+		tablas.add("PROVEEDORES");
+		tablas.add("USUARIOS");
 	}
 
 	/**
@@ -231,7 +237,6 @@ public class PersistenciaAlohAndes
 		sqlPersonaJuridica = new SQLPersonaJuridica(this);
 		sqlOferta= new SQLOferta(this);
 		sqlAdicional= new SQLAdicional(this);
-
 		sqlReserva= new SQLReserva(this);
 		sqlContrato= new SQLContrato(this);
 		sqlOfertaApartamento= new SQLOfertaApartamento(this);
@@ -239,6 +244,8 @@ public class PersistenciaAlohAndes
 		sqlOfertaHabitacionDiaria= new SQLOfertaHabitacionDiaria(this);
 		sqlOfertaHabitacionMensual= new SQLOfertaHabitacionMensual(this);
 		sqlOfertaViviendaUniversitaria= new SQLOfertaViviendaUniversitaria(this);
+		sqlProveedores= new SQLProveedores(this);
+		sqlUsuarios= new SQLUsuarios(this);
 	}
 
 	/**
@@ -317,6 +324,16 @@ public class PersistenciaAlohAndes
 		return tablas.get (13);
 	}
 
+	public String darTablaProveedores()
+	{
+		return tablas.get (14);
+	}
+
+	public String darTablaUsuarios()
+	{
+		return tablas.get (15);
+	}
+
 
 	/**
 	 * Extrae el mensaje de la exception JDODataStoreException embebido en la Exception e, que da el detalle especÃ­fico del problema encontrado
@@ -387,7 +404,7 @@ public class PersistenciaAlohAndes
 			System.out.println(tuplasInsertadas);
 			tx.commit();
 
-			log.trace ("InserciÃ³n de persona juridica: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
+			log.trace ("Insercion de persona juridica: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
 
 			return new PersonaNatural(numeroDocumento, tipoDocumento, nombre, nacionalidad, tipo, userName, contrasena);
 		}
@@ -421,7 +438,7 @@ public class PersistenciaAlohAndes
 			System.out.println(tuplasInsertadas);
 			tx.commit();
 
-			log.trace ("InserciÃ³n de persona juridica: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
+			log.trace ("Insercion de persona juridica: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
 
 			return new PersonaJuridica(nit, nombre, tipo, horaApertura, horaCierre, userName, contrasena);
 		}
@@ -444,22 +461,25 @@ public class PersistenciaAlohAndes
 	}
 
 
-	public Oferta adicionarOferta(Long id, String tipo_oferta, Boolean disponible, Integer precio) 
+	public Oferta adicionarOferta(Long id, Long id_operador, String tipo_oferta, Boolean disponible, Integer precio, String fechaInicio) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long tuplasInsertadas = sqlOferta.adicionarOferta(pm, id, tipo_oferta, disponible, precio);
+			long tuplasInsertadas = sqlOferta.adicionarOferta(pm, id, id_operador, tipo_oferta, disponible, precio, fechaInicio);
 			tx.commit();
 
-			log.trace ("InserciÃ³n de oferta: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
+			log.trace ("Insercion de oferta: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
 			int d = 0;
 			if(disponible)
 				d = 1;
 
-			return new Oferta(""+id, tipo_oferta, d, precio);
+			String[] fi =  fechaInicio.split("/");
+			Date i = new Date(Integer.parseInt(fi[2]), Integer.parseInt(fi[1]), Integer.parseInt(fi[0]));
+
+			return new Oferta(""+id, id_operador, tipo_oferta, d, precio, i);
 		}
 		catch (Exception e)
 		{
@@ -490,7 +510,7 @@ public class PersistenciaAlohAndes
 			System.out.println(tuplasInsertadas);
 			tx.commit();
 
-			log.trace ("InserciÃ³n de Adicional: " + id_oferta + ": " + tuplasInsertadas + " tuplas insertadas");
+			log.trace ("Insercion de Adicional: " + id_oferta + ": " + tuplasInsertadas + " tuplas insertadas");
 
 			return new Adicional(""+id_oferta, nombre, precio);
 		}
@@ -523,7 +543,7 @@ public class PersistenciaAlohAndes
 			System.out.println(tuplasInsertadas);
 			tx.commit();
 
-			log.trace ("InserciÃ³n de reserva: " + numeroReserva + ": " + tuplasInsertadas + " tuplas insertadas");
+			log.trace ("Insercion de reserva: " + numeroReserva + ": " + tuplasInsertadas + " tuplas insertadas");
 			
 			String[] fi =  fechaInicio.split("/");
 			Date i = new Date(Integer.parseInt(fi[2]), Integer.parseInt(fi[1]), Integer.parseInt(fi[0]));
@@ -657,7 +677,7 @@ public class PersistenciaAlohAndes
 			System.out.println(tuplasInsertadas);
 			tx.commit();
 
-			log.trace ("InserciÃ³n de Contrato: " + numContrato + ": " + tuplasInsertadas + " tuplas insertadas");
+			log.trace ("Insercion de Contrato: " + numContrato + ": " + tuplasInsertadas + " tuplas insertadas");
 
 			return new Contrato(numContrato, duracion, numReserva);
 		}
@@ -690,7 +710,7 @@ public class PersistenciaAlohAndes
 			System.out.println(tuplasInsertadas);
 			tx.commit();
 
-			log.trace ("InserciÃ³n de oferta apartamento: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
+			log.trace ("Insercion de oferta apartamento: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
 			
 			int a = 0;
 			if(esAmoblado)
@@ -730,7 +750,7 @@ public class PersistenciaAlohAndes
 			System.out.println(tuplasInsertadas);
 			tx.commit();
 
-			log.trace ("Inserción de Oferta Esporadica: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
+			log.trace ("Insercion de Oferta Esporadica: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
 			 int d = 0;
 			 if(disponible)
 				 d =1;
@@ -766,7 +786,7 @@ public class PersistenciaAlohAndes
 			System.out.println(tuplasInsertadas);
 			tx.commit();
 
-			log.trace ("InserciÃ³n de oferta habitacion diaria: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
+			log.trace ("Insercion de oferta habitacion diaria: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
 			int d = 0;
 			 if(disponible)
 				 d =1;
@@ -801,7 +821,7 @@ public class PersistenciaAlohAndes
 			System.out.println(tuplasInsertadas);
 			tx.commit();
 
-			log.trace ("InserciÃ³n de oferta habitacion mensual: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
+			log.trace ("Insercion de oferta habitacion mensual: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
 
 			int d = 0;
 			 if(disponible)
@@ -837,7 +857,7 @@ public class PersistenciaAlohAndes
 			System.out.println(tuplasInsertadas);
 			tx.commit();
 
-			log.trace ("InserciÃ³n de cliente: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
+			log.trace ("Insercion de cliente: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
 
 			int d = 0;
 			 if(disponible)
