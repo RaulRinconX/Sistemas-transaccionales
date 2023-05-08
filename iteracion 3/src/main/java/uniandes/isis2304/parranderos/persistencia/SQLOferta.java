@@ -119,6 +119,12 @@ public class SQLOferta {
 		return (List<AlojamientosPopulares>) q.executeList();
 	}
 
+	public List<VOOferta> noDemanda (PersistenceManager pm)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM OFERTAS WHERE ID_OFERTA NOT IN (SELECT ID_OFERTA FROM RESERVAS WHERE FECHA_FIN - FECHA_INICIO > 30)");
+		return (List<VOOferta>) q.executeResultList(Oferta.class);
+	} 
+
 	public List<VOOferta> RFC4 (PersistenceManager pm, String adicionales, String fecha_inicio, String fecha_fin)
 	{		
 		
@@ -131,15 +137,14 @@ public class SQLOferta {
 			if (i == 0){
 				adicional[i] = "('"+adicional[i]+ "'";
 			}
-			else if (i == adicional.length-1){
-				adicional[i] = ",'"+ adicional[i] + "')";
-			}
 			else{
 			adicional[i] = ",'" + adicional[i] + "'";
 			}
 
 			adicionalFinal += adicional[i];
 		}
+
+		adicionalFinal+=')';
 
 		// juntame lo que da el for en un solo string: GIMNASIO,RESTAURANTE,SALA DE ESTUDIO,TEATRO,MONITORIAS,JUEGOS
 		Query q = pm.newQuery(SQL, "SELECT ofertas.id_oferta, ofertas.tipo_oferta" +

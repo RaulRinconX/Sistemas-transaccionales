@@ -146,11 +146,11 @@
 					},
 					{
 						"label": "RFC8",
-						"event": "RFC8"
+						"event": "darClientesFrecuentes"
 					},
 					{
 						"label": "RFC9",
-						"event": "RFC9"
+						"event": "noDemanda"
 					}
 				]
 		},

@@ -51,6 +51,7 @@ import oracle.net.aso.t;
 import uniandes.isis2304.parranderos.negocio.AlohAndes;
 import uniandes.isis2304.parranderos.negocio.AlojamientosPopulares;
 import uniandes.isis2304.parranderos.negocio.Cliente;
+import uniandes.isis2304.parranderos.negocio.ClientesFrecuentes;
 import uniandes.isis2304.parranderos.negocio.GananciaProveedor;
 import uniandes.isis2304.parranderos.negocio.Oferta;
 import uniandes.isis2304.parranderos.negocio.UsoAlohandes;
@@ -279,7 +280,7 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
     		
 			String nacionalidad = JOptionPane.showInputDialog (this, "Nacionalidad del cliente?", "Adicionar Cliente", JOptionPane.QUESTION_MESSAGE);
     		
-			String tipo = JOptionPane.showInputDialog (this, "Tipo de cliente (Relacion/profesion)?", "Adicionar Cliente", JOptionPane.QUESTION_MESSAGE);
+			String tipo = JOptionPane.showInputDialog (this, "Tipo de cliente? (ESTUDIANTE,PROFESOR,EMPLEADO,PADRE ESTUDIANTE,PROFESOR INVITADO,REGISTRADO EVENTO)", "Adicionar Cliente", JOptionPane.QUESTION_MESSAGE);
     		
 			String username = JOptionPane.showInputDialog (this, "Nombre de usuario del cliente?", "Adicionar Cliente", JOptionPane.QUESTION_MESSAGE);
     		
@@ -512,7 +513,7 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
 
 			String ubicacion= JOptionPane.showInputDialog (this, "¿Cuál es la ubicación?", "Adicionar Oferta", JOptionPane.QUESTION_MESSAGE);
 
-			Long id_operador= Long.parseLong(JOptionPane.showInputDialog (this, "¿Cuál es el id del operador?", "Adicionar Oferta", JOptionPane.QUESTION_MESSAGE));
+			String id_operador= JOptionPane.showInputDialog (this, "¿Cuál es el id del operador?", "Adicionar Oferta", JOptionPane.QUESTION_MESSAGE);
 
 			if (id!=null && esCompartida!=null && precio!=null && ubicacion!=null && id_operador!=null)
 			{
@@ -554,7 +555,7 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
 			else if(compartida.equalsIgnoreCase("no"))
 				esCompartida=false;
 
-			Long id_operador= Long.parseLong(JOptionPane.showInputDialog (this, "¿Cuál es el id del operador?", "Adicionar Oferta", JOptionPane.QUESTION_MESSAGE));
+			String id_operador= JOptionPane.showInputDialog (this, "¿Cuál es el id del operador?", "Adicionar Oferta", JOptionPane.QUESTION_MESSAGE);
 			
 			if (id!=null && capacidad != null && duracion!=null && esCompartida!=null && precio!= null 
 					&& id_operador != null)
@@ -648,8 +649,8 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
         		{
         			throw new Exception ("No se pudo crear la reserva: " + numR);
         		}
-        		String resultado = "En adicionarCliente\n\n";
-        		resultado += "Cliente adicionado exitosamente: " + c;
+        		String resultado = "En adicionarReserva\n\n";
+        		resultado += "Reserva creada exitosamente: " + c;
     			resultado += "\n Operacion terminada";
     			panelDatos.actualizarInterfaz(resultado);
     		}
@@ -1290,6 +1291,65 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
 		return resp;
 	}
 
+	public void darClientesFrecuentes( )
+	{
+		try 
+		{
+			List <ClientesFrecuentes> lista = alohAndes.darClientesFrecuentes();
+
+			String resultado = "En ListaClientesFrecuentes";
+			resultado +=  "\n" + darClientesFrecuentes (lista);
+			panelDatos.actualizarInterfaz(resultado);
+			resultado += "\n Operación terminada";
+		} 
+		catch (Exception e) 
+		{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
+
+	private String darClientesFrecuentes(List<ClientesFrecuentes> lista) {
+		String resp = "Los clientes frecuentes son: \n";
+		int i = 1;
+		for (ClientesFrecuentes tb : lista) 
+		{
+			resp += i++ + ". " + tb.toString() + "\n";
+		}
+		return resp;
+	}
+
+
+	public void noDemanda( )
+	{
+		try 
+		{
+			List <VOOferta> lista = alohAndes.noDemanda();
+
+			String resultado = "En listarOfertasPopulares";
+			resultado +=  "\n" + noDemanda (lista);
+			panelDatos.actualizarInterfaz(resultado);
+			resultado += "\n Operacion terminada";
+		} 
+		catch (Exception e) 
+		{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
+
+	private String noDemanda(List<VOOferta> lista) {
+		String resp = "Las ofertas cono menos demanda: \n";
+		int i = 1;
+		for (VOOferta tb : lista) 
+		{
+			resp += i++ + ". " + tb.toString() + "\n";
+		}
+		return resp;
+	}
+
 	public void mostrarUsoAlohandes()
 	{
 		try 
@@ -1452,7 +1512,7 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
 	 */
 	public void mostrarModeloConceptual ()
 	{
-		mostrarArchivo ("data/Modelo Conceptual Parranderos.pdf");
+		mostrarArchivo ("data/Class Diagram1.jpg");
 	}
 	
 	/**
@@ -1460,7 +1520,7 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
 	 */
 	public void mostrarEsquemaBD ()
 	{
-		mostrarArchivo ("data/Esquema BD Parranderos.pdf");
+		mostrarArchivo ("data/relacional.pdf");
 	}
 	
 	/**
@@ -1468,7 +1528,7 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
 	 */
 	public void mostrarScriptBD ()
 	{
-		mostrarArchivo ("data/EsquemaParranderos.sql");
+		mostrarArchivo ("data/CREACION BD ORDENADA.sql");
 	}
 	
 	/**

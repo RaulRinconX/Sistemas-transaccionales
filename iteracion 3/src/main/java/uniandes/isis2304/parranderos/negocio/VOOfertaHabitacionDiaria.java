@@ -9,7 +9,7 @@ public interface VOOfertaHabitacionDiaria {
 
 	public String getUbicacion();
 	
-	public Long getId_operador();
+	public String getId_operador();
 
 	public List<Reserva> getReservas();
 	

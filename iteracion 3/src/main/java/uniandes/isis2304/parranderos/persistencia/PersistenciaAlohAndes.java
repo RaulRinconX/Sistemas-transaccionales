@@ -34,6 +34,7 @@ import com.google.gson.JsonObject;
 import uniandes.isis2304.parranderos.negocio.Adicional;
 import uniandes.isis2304.parranderos.negocio.AlojamientosPopulares;
 import uniandes.isis2304.parranderos.negocio.Cliente;
+import uniandes.isis2304.parranderos.negocio.ClientesFrecuentes;
 import uniandes.isis2304.parranderos.negocio.Contrato;
 import uniandes.isis2304.parranderos.negocio.GananciaProveedor;
 import uniandes.isis2304.parranderos.negocio.Oferta;
@@ -302,7 +303,7 @@ public class PersistenciaAlohAndes
 
 	public String darTablaReservas()
 	{
-		System.out.println(tablas);
+		//System.out.println(tablas);
 		return tablas.get (7);
 	}
 
@@ -787,7 +788,7 @@ public class PersistenciaAlohAndes
 
 
 	public OfertaHabitacionDiaria adicionarOfertaHabitacionDiaria(Long id, String tipo, Boolean disponible, Integer precio, 
-			Boolean esCompartida, String ubicacion, Long id_operador) 
+			Boolean esCompartida, String ubicacion, String id_operador) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
@@ -858,7 +859,7 @@ public class PersistenciaAlohAndes
 	}
 
 	public OfertaViviendaUniversitaria adicionarOfertaViviendaUniversitaria(Long id, String tipo, Boolean disponible, Integer precio, 
-			Integer capacidad, String duracion, Boolean esCompartida, Long id_operador) 
+			Integer capacidad, String duracion, Boolean esCompartida, String id_operador) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
@@ -934,6 +935,11 @@ public class PersistenciaAlohAndes
 	{
 		return sqlOferta.darOfertasTipo(pmf.getPersistenceManager(), tipo);
 	}
+
+	public List<ClientesFrecuentes> darClientesFrecuentes()
+	{
+		return sqlCliente.darClientesFrecuentes(pmf.getPersistenceManager());
+	}
 	/**
 	 * Método que consulta todas las tuplas en la tabla TipoBebida
 	 * @return La lista de objetos TipoBebida, construidos con base en las tuplas de la tabla TIPOBEBIDA
@@ -998,6 +1004,11 @@ public class PersistenciaAlohAndes
 	public List<UsoAlohandes> usoAlohandes ()
 	{
 		return sqlUsuarios.darUso(pmf.getPersistenceManager());
+	}
+
+	public List<VOOferta> noDemanda ()
+	{
+		return sqlOferta.noDemanda(pmf.getPersistenceManager());
 	}
 
 	public List<UsoUsuario> usoUsuario (String id_usuario)

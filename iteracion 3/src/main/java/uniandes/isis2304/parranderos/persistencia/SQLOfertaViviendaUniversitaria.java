@@ -35,7 +35,7 @@ public class SQLOfertaViviendaUniversitaria {
 	}
 	
 	public long adicionarOfertaViviendaUniversitaria (PersistenceManager pm, Long id,Integer capacidad, String duracion, 
-			Boolean esCompartida, Long id_operador) 
+			Boolean esCompartida, String id_operador) 
 	{
         Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaOfertaViviendaUniversitaria() 
         + "(id, capacidad, duracion, es_compartida, id_operador) values (?, ?, ?, ?, ?)");

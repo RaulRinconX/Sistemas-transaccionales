@@ -71,6 +71,8 @@ public class AlohAndes {
 
 		List<Oferta> libres = ofertasLibres(tipoOferta, fechaI, fechaF);
 
+		System.out.println(libres);
+
 		if(libres.size()>= cantidad){
 
 			int cont = 0;
@@ -309,7 +311,7 @@ public class AlohAndes {
 		return oE;
 	}
 
-	public OfertaHabitacionDiaria adicionarOfertaHabitacionDiaria(Long id, String tipo, Boolean disponible, Integer precio, Boolean esCompartida, String ubicacion, Long id_operador)
+	public OfertaHabitacionDiaria adicionarOfertaHabitacionDiaria(Long id, String tipo, Boolean disponible, Integer precio, Boolean esCompartida, String ubicacion, String id_operador)
 	{
 		log.info ("Adicionando oferta esporadica " + id);
 		OfertaHabitacionDiaria oHD = pA.adicionarOfertaHabitacionDiaria(id, tipo, disponible, precio, esCompartida, ubicacion, id_operador);
@@ -327,7 +329,7 @@ public class AlohAndes {
 	}
 
 	public OfertaViviendaUniversitaria adicionarOfertaViviendaUniversitaria(Long id, String tipo, Boolean disponible, 
-			Integer precio, Integer capacidad, String duracion, Boolean esCompartida, Long id_operador)
+			Integer precio, Integer capacidad, String duracion, Boolean esCompartida, String id_operador)
 	{
 		log.info ("Adicionando oferta vivienda universitaria " + id);
 		OfertaViviendaUniversitaria oVU = pA.adicionarOfertaViviendaUniversitaria(id, tipo, disponible, precio, capacidad, duracion, esCompartida, id_operador);
@@ -459,11 +461,27 @@ public class AlohAndes {
         return tiposBebida;
 	}
 
+	public List<ClientesFrecuentes> darClientesFrecuentes ()
+	{
+		log.info ("Consultando clientes frecuentes");
+        List<ClientesFrecuentes> tiposBebida = pA.darClientesFrecuentes();	
+        log.info ("Consultando los clientes frecuentes: " + tiposBebida.size() );
+        return tiposBebida;
+	}
+
+	public List<VOOferta> noDemanda ()
+	{
+		log.info ("Consultando poca demanda");
+        List<VOOferta> tiposBebida = pA.noDemanda();	
+        log.info ("Consultando pocas demandas: " + tiposBebida.size() );
+        return tiposBebida;
+	}
+
 	public List<UsoAlohandes> usoAlohandes ()
 	{
 		log.info ("Consultando uso Alohandes");
         List<UsoAlohandes> tiposBebida = pA.usoAlohandes();	
-        log.info ("Consultando los alojamientos populares: " + tiposBebida.size() );
+        log.info ("Consultando los usos de alohandes: " + tiposBebida.size() );
         return tiposBebida;
 	}
 
@@ -555,4 +573,6 @@ public class AlohAndes {
 		log.info ("Generando los VO de usuarios: " + voTipos.size() + " existentes");
 		return voTipos;
 	}
+
+
 }

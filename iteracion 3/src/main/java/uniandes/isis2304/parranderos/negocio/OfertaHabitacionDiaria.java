@@ -10,7 +10,7 @@ public class OfertaHabitacionDiaria extends Oferta implements VOOfertaHabitacion
 	
 	private String ubicacion;
 	
-	private Long id_operador;
+	private String id_operador;
 	
 	private List<Reserva> reservas;
 
@@ -21,7 +21,7 @@ public class OfertaHabitacionDiaria extends Oferta implements VOOfertaHabitacion
 
 	
 
-	public OfertaHabitacionDiaria(String id, String tipo, Integer disponible, Integer precio, Boolean esCompartida, String ubicacion, Long id_operador) {
+	public OfertaHabitacionDiaria(String id, String tipo, Integer disponible, Integer precio, Boolean esCompartida, String ubicacion, String id_operador) {
 		super.setId_oferta(id);
 		super.setTipo_oferta(tipo);
 		super.setDisponible(disponible);
@@ -34,11 +34,11 @@ public class OfertaHabitacionDiaria extends Oferta implements VOOfertaHabitacion
 
 
 
-	public Long getId_operador() {
+	public String getId_operador() {
 		return id_operador;
 	}
 
-	public void setId_operador(Long id_operador) {
+	public void setId_operador(String id_operador) {
 		this.id_operador = id_operador;
 	}
 

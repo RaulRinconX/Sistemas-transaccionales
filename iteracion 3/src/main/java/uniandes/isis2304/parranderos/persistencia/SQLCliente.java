@@ -6,6 +6,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
 import uniandes.isis2304.parranderos.negocio.Cliente;
+import uniandes.isis2304.parranderos.negocio.ClientesFrecuentes;
 
 public class SQLCliente {
 
@@ -49,9 +50,24 @@ public class SQLCliente {
 	// listar clientes
 	public List<Cliente> darClientes (PersistenceManager pm)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaClientes ());
+		Query q = pm.newQuery(SQL, "SELECT * FROM CLIENTES ");
 
 		return (List<Cliente>) q.executeResultList(Cliente.class);
+	}
+
+	public List<ClientesFrecuentes> darClientesFrecuentes(PersistenceManager pm)
+	{
+		Query q = pm.newQuery(SQL, "WITH subconsulta AS" +
+								   " (SELECT r.doc_cliente as cliente,"+ 
+				  				   " COUNT(*) AS numero_de_reservas,"+
+				                   " TRUNC(r.fecha_fin) - TRUNC(r.fecha_inicio) AS numero_noches"+
+								   " FROM RESERVAS r"+
+								   " GROUP BY r.doc_cliente, TRUNC(r.fecha_fin) - TRUNC(r.fecha_inicio))"+
+		 					 	   " SELECT s.cliente, s.numero_de_reservas, s.numero_noches"+
+		 						   " FROM subconsulta s"+
+		 						   " WHERE s.numero_noches >= 15 AND s.numero_de_reservas >= 3");
+
+		return (List<ClientesFrecuentes>) q.executeResultList(ClientesFrecuentes.class);
 	}
 
 }

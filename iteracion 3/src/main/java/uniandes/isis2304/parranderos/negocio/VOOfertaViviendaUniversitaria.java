@@ -10,7 +10,7 @@ public interface VOOfertaViviendaUniversitaria {
 
 	public Boolean getEsCompartida();
 	
-	public Long getId_operador();
+	public String getId_operador();
 
 	public List<Adicional> getServiciosAdicionales();
 

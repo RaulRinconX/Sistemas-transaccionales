@@ -2154,3 +2154,227 @@ ORA-00001: restricción única (ISIS2304B28202310.RESERVAS_PK) violada
 18:45:42,212 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
 18:46:00,234 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando uso Usuario
 18:46:00,357 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando uso de los usuarios: 1
+19:01:41,584 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+19:01:41,585 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+19:01:41,608 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:01:45,337 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando poca demanda
+19:01:45,454 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando pocas demandas: 3
+19:33:56,819 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+19:33:56,820 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+19:33:56,839 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:34:03,588 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+19:34:03,699 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 6 existentes
+19:35:16,588 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva 2
+19:35:16,895 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva: Reserva [num_reserva=2 , fecha_inicio=3922-06-25, fecha_fin=3923-06-05, id_oferta=3, doc_cliente=1025520319, tipo_doc_cliente=CC, fecha_cancelacion=1922-06-07]
+20:01:32,899 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+20:01:32,900 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+20:01:32,922 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:01:43,493 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+20:01:43,614 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 6 existentes
+20:02:07,231 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+20:02:07,277 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 6 existentes
+20:02:17,061 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+20:02:17,113 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 6 existentes
+20:02:31,957 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+20:02:32,005 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 6 existentes
+20:02:37,513 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida
+20:02:37,560 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida: 9 existentes
+20:02:51,715 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+20:02:51,772 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 6 existentes
+20:03:04,859 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+20:03:04,904 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 6 existentes
+20:03:57,115 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva 12
+20:03:57,115 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva 12
+20:03:57,154 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva: Reserva [num_reserva=12 , fecha_inicio=3923-06-05, fecha_fin=3923-09-08, id_oferta=3, doc_cliente=1025520319, tipo_doc_cliente=CC, fecha_cancelacion=3923-06-07]
+20:03:57,154 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva: Reserva [num_reserva=12 , fecha_inicio=3923-06-05, fecha_fin=3923-09-08, id_oferta=3, doc_cliente=1025520319, tipo_doc_cliente=CC, fecha_cancelacion=3923-06-07]
+20:03:57,206 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva 12
+20:03:57,206 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva 12
+20:03:57,248 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaAlohAndes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO RESERVAS(num_reserva, fecha_inicio, fecha_fin, id_oferta, doc_cliente, tipo_doc_cliente, fecha_cancelacion) values (?, ?, ?, ?, ?, ?, ?)".
+ORA-00001: restricción única (ISIS2304B28202310.RESERVAS_PK) violada
+
+20:03:57,325 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva: null
+20:03:57,325 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva: null
+20:05:54,324 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+20:05:54,325 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+20:05:54,362 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:07:44,011 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida
+20:07:44,056 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida: 6 existentes
+20:10:35,583 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando oferta 320320320
+20:10:35,845 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando oferta: Oferta [id_oferta=320320320 ,id_operador=195920147, tipo_oferta=VIVIENDA UNIVERSITARIA, disponible=1, precio=69696, fecha_inicio=3922-05-25]
+20:10:54,265 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando oferta vivienda universitaria 320320320
+20:10:54,266 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaAlohAndes] - Exception : Index: 14, Size: 14
+
+20:10:54,274 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando oferta vivienda universitaria: null
+20:11:21,559 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+20:12:41,948 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+20:12:41,949 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+20:12:41,999 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:12:48,053 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+20:12:48,164 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 7 existentes
+20:13:15,074 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando Adicional 320320320,GIMNASIO
+20:13:15,356 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando adicional: Adicional [id_oferta=320320320, nombre=GIMNASIO, precio=43000]
+20:14:38,483 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva 45
+20:14:38,483 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva 45
+20:14:38,548 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva: Reserva [num_reserva=45 , fecha_inicio=3922-05-26, fecha_fin=3922-07-30, id_oferta=3, doc_cliente=1025520319, tipo_doc_cliente=CC, fecha_cancelacion=3922-06-09]
+20:14:38,548 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva: Reserva [num_reserva=45 , fecha_inicio=3922-05-26, fecha_fin=3922-07-30, id_oferta=3, doc_cliente=1025520319, tipo_doc_cliente=CC, fecha_cancelacion=3922-06-09]
+20:14:38,614 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva 45
+20:14:38,614 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva 45
+20:14:38,652 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaAlohAndes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO RESERVAS(num_reserva, fecha_inicio, fecha_fin, id_oferta, doc_cliente, tipo_doc_cliente, fecha_cancelacion) values (?, ?, ?, ?, ?, ?, ?)".
+ORA-00001: restricción única (ISIS2304B28202310.RESERVAS_PK) violada
+
+20:14:38,709 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva: null
+20:14:38,709 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva: null
+20:15:10,728 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida
+20:15:10,783 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida: 11 existentes
+20:17:26,930 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Eliminando reserva por id: 45
+20:17:27,021 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Eliminando reserva: 1
+20:17:30,547 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+20:17:30,628 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 7 existentes
+20:17:33,082 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida
+20:17:33,138 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida: 10 existentes
+20:18:36,743 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+20:18:36,795 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 7 existentes
+20:26:22,913 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+20:26:22,914 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+20:26:22,936 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:27:15,139 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando Cliente Camilo
+20:27:15,435 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaAlohAndes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CLIENTES(numero_documento, tipo_documento, nombre, nacionalidad, tipo, username, contrasena) values (?, ?, ?, ?, ?, ?, ?)".
+ORA-02290: restricción de control (ISIS2304B28202310.CLIENTES_CHK2) violada
+
+20:27:15,500 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando Cliente: null
+20:28:49,273 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+20:28:49,274 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+20:28:49,300 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:29:19,555 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando Cliente Camilo
+20:29:19,859 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando Cliente: Cliente [nacionalidad=Locombia, numeroDocumento=22, tipo=ESTUDIANTE, tipoDocumento=CC, interesan=null, reservas=null]
+20:30:06,207 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando pj TELMEX
+20:30:06,312 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando pj: PersonaJuridica [nit=12, horaApertura=5:00, horaCierre=19:00, tipo=HOTEL, ofertasViviendaUniversitaria=null, ofertasHabitacionDiaria=null]
+20:30:15,718 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de oferta apartamento
+20:30:15,806 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de usuarios: 16 existentes
+20:30:38,382 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de oferta apartamento
+20:30:38,433 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de usuarios: 16 existentes
+20:30:56,791 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Clientes
+20:31:12,198 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+20:31:12,199 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+20:31:12,221 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:33:07,079 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando oferta 56
+20:33:07,391 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando oferta: Oferta [id_oferta=56 ,id_operador=77780511, tipo_oferta=HOSTAL, disponible=1, precio=5000, fecha_inicio=3923-08-07]
+20:47:42,266 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+20:49:01,470 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+20:49:01,795 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 8 existentes
+20:49:50,607 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva 246
+20:50:09,786 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaAlohAndes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO RESERVAS(num_reserva, fecha_inicio, fecha_fin, id_oferta, doc_cliente, tipo_doc_cliente, fecha_cancelacion) values (?, ?, ?, ?, ?, ?, ?)".
+Conexión cerrada
+20:50:09,813 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva: null
+20:50:20,248 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+20:50:20,298 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 8 existentes
+20:51:01,812 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva 56
+20:51:02,121 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva: Reserva [num_reserva=56 , fecha_inicio=3923-09-08, fecha_fin=3923-10-09, id_oferta=56, doc_cliente=1025520319, tipo_doc_cliente=CC, fecha_cancelacion=3923-09-07]
+20:51:41,062 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Eliminando reserva por id: 56
+20:51:41,160 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Eliminando reserva: 1
+20:51:46,714 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+20:51:46,766 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 8 existentes
+20:51:52,534 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Eliminando reserva por id: 56
+20:51:52,656 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Eliminando reserva por id: 1 tuplas eliminadas
+20:51:56,900 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+20:51:56,967 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 7 existentes
+20:52:02,397 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando ganancias
+20:52:02,511 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando el numero de proveedores: 3
+20:52:07,774 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando Alojamientos populares
+20:52:07,871 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando los alojamientos populares: 5
+20:52:44,997 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+20:58:00,182 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+20:58:00,183 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+20:58:00,216 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:58:26,365 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+20:58:26,476 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 3 existentes
+20:59:17,014 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+20:59:17,015 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+20:59:17,038 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:59:37,607 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+20:59:49,818 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+20:59:49,818 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+20:59:49,840 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+21:00:07,537 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+21:00:07,644 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 3 existentes
+21:00:17,523 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando uso Alohandes
+21:00:17,620 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando los usos de alohandes: 16
+21:00:33,399 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando uso Usuario
+21:00:33,473 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando uso de los usuarios: 3
+21:01:41,271 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva 333
+21:01:41,271 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva 333
+21:01:41,635 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva: Reserva [num_reserva=333 , fecha_inicio=3925-01-30, fecha_fin=3926-01-12, id_oferta=3, doc_cliente=1025520319, tipo_doc_cliente=CC, fecha_cancelacion=3925-10-09]
+21:01:41,635 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva: Reserva [num_reserva=333 , fecha_inicio=3925-01-30, fecha_fin=3926-01-12, id_oferta=3, doc_cliente=1025520319, tipo_doc_cliente=CC, fecha_cancelacion=3925-10-09]
+21:01:41,737 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva 333
+21:01:41,737 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva 333
+21:01:41,787 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaAlohAndes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO RESERVAS(num_reserva, fecha_inicio, fecha_fin, id_oferta, doc_cliente, tipo_doc_cliente, fecha_cancelacion) values (?, ?, ?, ?, ?, ?, ?)".
+ORA-00001: restricción única (ISIS2304B28202310.RESERVAS_PK) violada
+
+21:01:41,837 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva: null
+21:01:41,837 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Adicionando reserva: null
+21:01:47,489 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida
+21:01:47,560 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida: 11 existentes
+21:02:12,551 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Eliminando reserva por id: 333
+21:02:12,620 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Eliminando reserva: 1
+21:02:16,032 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida
+21:02:16,105 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Tipos de bebida: 10 existentes
+21:02:20,690 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+21:02:20,739 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 7 existentes
+21:02:40,541 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+21:02:40,608 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 7 existentes
+21:02:48,274 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+21:02:48,327 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 7 existentes
+21:02:56,096 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+21:02:56,152 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 7 existentes
+21:03:06,496 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+21:03:06,546 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 7 existentes
+21:03:36,062 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando poca demanda
+21:03:36,121 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando pocas demandas: 4
+21:03:45,429 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando ganancias
+21:03:45,483 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando el numero de proveedores: 3
+21:22:43,376 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+21:22:43,377 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+21:22:43,397 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+21:22:47,041 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando clientes frecuentes
+21:23:36,413 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando clientes frecuentes
+21:28:59,840 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+21:28:59,840 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+21:28:59,863 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+21:29:04,442 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando clientes frecuentes
+21:33:00,289 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando poca demanda
+21:33:00,403 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando pocas demandas: 4
+21:33:02,160 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando clientes frecuentes
+21:33:06,805 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando uso Usuario
+21:33:06,861 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando uso de los usuarios: 0
+21:34:19,634 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando clientes frecuentes
+21:35:43,071 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+21:35:43,072 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+21:35:43,096 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+21:35:47,511 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando clientes frecuentes
+21:37:33,701 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+21:37:33,702 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+21:37:33,721 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+21:37:38,709 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando clientes frecuentes
+21:38:04,284 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+21:38:04,285 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+21:38:04,305 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+21:38:08,129 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de Clientes
+21:39:31,122 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+21:39:31,123 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se aplica configuración indicada en el archivo de configuración
+21:39:31,155 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+21:39:35,460 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando ganancias
+21:39:35,587 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando el numero de proveedores: 3
+21:39:36,524 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando Alojamientos populares
+21:39:36,605 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando los alojamientos populares: 5
+21:39:49,804 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas
+21:39:49,887 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Generando los VO de ofertas: 3 existentes
+21:39:53,764 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando uso Alohandes
+21:39:53,837 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando los usos de alohandes: 16
+21:40:00,672 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando uso Usuario
+21:40:00,809 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando uso de los usuarios: 3
+21:40:05,854 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando uso Usuario
+21:40:05,913 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando uso de los usuarios: 0
+21:40:08,916 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando clientes frecuentes
+21:40:10,746 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando poca demanda
+21:40:10,822 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando pocas demandas: 4
+21:42:18,302 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.AlohAndes] - Consultando clientes frecuentes

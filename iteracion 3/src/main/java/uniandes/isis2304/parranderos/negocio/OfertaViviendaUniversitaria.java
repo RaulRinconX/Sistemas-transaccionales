@@ -11,7 +11,7 @@ public class OfertaViviendaUniversitaria extends Oferta implements VOOfertaVivie
 
 	private Boolean esCompartida;
 	
-	private Long id_operador;
+	private String id_operador;
 	
 	private List<Reserva> reservas;
 	
@@ -27,7 +27,7 @@ public class OfertaViviendaUniversitaria extends Oferta implements VOOfertaVivie
 	
 	
 	public OfertaViviendaUniversitaria(String id, String tipo, Integer disponible, Integer precio, Integer capacidad, String duracion,
-			Boolean esCompartida, Long id_operador) {
+			Boolean esCompartida, String id_operador) {
 		super.setId_oferta(id);
 		super.setTipo_oferta(tipo);
 		super.setDisponible(disponible);
@@ -85,11 +85,11 @@ public class OfertaViviendaUniversitaria extends Oferta implements VOOfertaVivie
 		this.serviciosAdicionales = serviciosAdicionales;
 	}
 
-	public Long getId_operador() {
+	public String getId_operador() {
 		return id_operador;
 	}
 
-	public void setId_operador(Long id_operador) {
+	public void setId_operador(String id_operador) {
 		this.id_operador = id_operador;
 	}
 
