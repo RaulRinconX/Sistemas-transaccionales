@@ -1520,7 +1520,7 @@ public class InterfazAlohAndesApp extends JFrame implements ActionListener
 	 */
 	public void mostrarEsquemaBD ()
 	{
-		mostrarArchivo ("data/relacional.pdf");
+		mostrarArchivo ("data/relacional.xlsx");
 	}
 	
 	/**
