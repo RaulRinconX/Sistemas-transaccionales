@@ -1,0 +1,22 @@
+{
+	"title": "Nombres de las tablas de AlohAndes para la aplicación B",
+	"unidadPersistencia": "Parranderos",
+	"tablas":
+	[
+		"AlohAndes_sequence",
+		"B_ADMINVIVIENDA",
+		"B_APARTAMENTO",
+		"B_CLIENTE",
+		"B_CLIENTEMIEMBROCOMUNIDAD",
+		"B_CONTRATO",
+		"B_EMPRESA",
+		"B_HOSPEDAJE",
+		"B_OFERTACOMUN"
+		"B_OFERTAEXCLUSIVA",
+		"B_PROPIETARIOMIEMBRO",
+		"B_RESERVACOMUN",
+		"B_VECINO",
+		"B_VIVIENDA",
+		"B_VIVIENDAUNIVERSITARIA"
+	]
+}

@@ -6,7 +6,9 @@ INNER JOIN adicionales ON ofertas.id_oferta = adicionales.id_oferta
 WHERE u.numero_documento = '1025520319';
 
 SELECT * FROM CLIENTES;
-
+SELECT * FROM ADICIONALES;
+SELECT * FROM RESERVAS;
+SELECT * FROM OFERTAS;
 
 ----------------------------------------
 

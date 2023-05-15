@@ -7,4 +7,5 @@ WITH subconsulta AS (
 )
 SELECT s.cliente, s.numero_de_reservas, s.numero_noches
 FROM subconsulta s
-WHERE s.numero_noches >= 15 AND s.numero_de_reservas >= 3;
+WHERE s.numero_noches >= 15 AND s.numero_de_reservas >= 2;
+

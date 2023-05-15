@@ -1,0 +1,336 @@
+{
+	"title": "Aplicación transaccional de AlohAndes",
+	"frameH": 600,
+	"frameW": 800,
+	"bannerPath": "./src/main/resources/config/logo.png",
+	"menuBar":
+	[
+		{ "menuTitle": "OfertaComun",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarOfertaComun"
+				},
+				{
+					"label": "Listar",
+					"event": "listarOfertaComun"
+				},
+				{
+					"label": "Borrar por Id",
+					"event": "eliminarOfertaComunPorId"
+				},
+				{
+					"label": "Buscar por Nombre",
+					"event": "buscarOfertaComunPorId"
+				}
+			]
+		},
+		{ "menuTitle": "OfertaExclusiva",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarOfertaExclusiva"
+				},
+				{
+					"label": "Listar",
+					"event": "listarOfertaExclusiva"
+				},
+				{
+					"label": "Borrar por Id",
+					"event": "eliminarOfertaExclusivaPorId"
+				},
+				{
+					"label": "Buscar por Nombre",
+					"event": "buscarOfertaExclusivaPorId"
+				}
+			]
+		},
+		{ "menuTitle": "ViviendaUniversitaria",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarViviendaUniversitaria"
+				},
+				{
+					"label": "Listar",
+					"event": "listarViviendaUniversitaria"
+				},
+				{
+					"label": "Borrar por Id",
+					"event": "eliminarViviendaUniversitariaPorId"
+				},
+				{
+					"label": "Buscar por Nombre",
+					"event": "buscarViviendaUniversitariaPorId"
+				}
+			]
+		},
+		{ "menuTitle": "Apartamento",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarApartamento"
+				},
+				{
+					"label": "Listar",
+					"event": "listarApartamento"
+				},
+				{
+					"label": "Borrar por Id",
+					"event": "eliminarApartamentoPorId"
+				},
+				{
+					"label": "Buscar por Nombre",
+					"event": "buscarApartamentoPorId"
+				}
+			]
+		},
+		{ "menuTitle": "Vivienda",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarVivienda"
+				},
+				{
+					"label": "Listar",
+					"event": "listarVivienda"
+				},
+				{
+					"label": "Borrar por Id",
+					"event": "eliminarViviendaPorId"
+				},
+				{
+					"label": "Buscar por Nombre",
+					"event": "buscarViviendaPorId"
+				}
+			]
+		},
+		{ "menuTitle": "Hospedaje",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarHospedaje"
+				},
+				{
+					"label": "Listar",
+					"event": "listarHospedaje"
+				},
+				{
+					"label": "Borrar por Id",
+					"event": "eliminarHospedajePorId"
+				},
+				{
+					"label": "Buscar por Nombre",
+					"event": "buscarHospedajePorId"
+				}
+			]
+		},
+		{ "menuTitle": "Empresa",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarEmpresa"
+				},
+				{
+					"label": "Listar",
+					"event": "listarEmpresa"
+				},
+				{
+					"label": "Buscar por Nombre",
+					"event": "buscarEmpresaPorId"
+				}
+			]
+		},
+		{ "menuTitle": "Vecino",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarVecino"
+				},
+				{
+					"label": "Listar",
+					"event": "listarVecino"
+				},
+				{
+					"label": "Buscar por Nombre",
+					"event": "buscarVecinoPorId"
+				}
+			]
+		},
+		{ "menuTitle": "AdminVivienda",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarAdminVivienda"
+				},
+				{
+					"label": "Listar",
+					"event": "listarAdminVivienda"
+				},
+				{
+					"label": "Buscar por Nombre",
+					"event": "buscarAdminViviendaPorId"
+				}
+			]
+		},
+		{ "menuTitle": "PropietarioMiembro",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarPropietarioMiembro"
+				},
+				{
+					"label": "Listar",
+					"event": "listarPropietarioMiembro"
+				},
+				{
+					"label": "Buscar por Nombre",
+					"event": "buscarPropietarioMiembroPorId"
+				}
+			]
+		},
+		{ "menuTitle": "Cliente",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarCliente"
+				},
+				{
+					"label": "Listar",
+					"event": "listarCliente"
+				},
+				{
+					"label": "Borrar por Id",
+					"event": "eliminarClientePorId"
+				}
+			]
+		},
+		{ "menuTitle": "ClienteMiembro",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarClienteMiembro"
+				},
+				{
+					"label": "Listar",
+					"event": "listarClienteMiembro"
+				},
+				{
+					"label": "Borrar por Id",
+					"event": "eliminarClienteMiembroPorId"
+				}
+			]
+		},
+		{ "menuTitle": "ReservaComun",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarReservaComun"
+				},
+				{
+					"label": "Listar",
+					"event": "listarReservaComun"
+				},
+				{
+					"label": "Borrar por Id",
+					"event": "eliminarReservaComunPorId"
+				}
+			]
+		},
+		{ "menuTitle": "Contrato",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarContrato"
+				},
+				{
+					"label": "Listar",
+					"event": "listarContrato"
+				},
+				{
+					"label": "Borrar por Id",
+					"event": "eliminarContratoPorId"
+				}
+			]
+		},
+		{ "menuTitle": "Mantenimiento",
+		  "options":
+			[
+				{
+					"label": "Mostrar log Parranderos",
+					"event": "mostrarLogParranderos"
+				},
+				{
+					"label": "Mostrar log datanucleus",
+					"event": "mostrarLogDatanuecleus"
+				},
+				{
+					"label": "Limpiar log de parranderos",
+					"event": "limpiarLogParranderos"
+				},
+				{
+					"label": "Limpiar log de datanucleus",
+					"event": "limpiarLogDatanucleus"
+				},
+				{
+					"label": "Limpiar Base de Datos",
+					"event": "limpiarBD"
+				}
+			]
+		},		
+		{ "menuTitle": "Documentación",
+		  "options":
+			[
+				{
+					"label": "Presentación general",
+					"event": "mostrarPresentacionGeneral"
+				},
+				{
+					"label": "Modelo conceptual",
+					"event": "mostrarModeloConceptual"
+				},
+				{
+					"label": "Esquema de la BD",
+					"event": "mostrarEsquemaBD"
+				},
+				{
+					"label": "Script creación de la BD",
+					"event": "mostrarScriptBD"
+				},
+				{
+					"label": "Arquitectura de referencia",
+					"event": "mostrarArqRef"
+				},
+				{
+					"label": "Javadoc Parranderos",
+					"event": "mostrarJavadoc"
+				}
+			]
+		},		
+		{ "menuTitle": "Acerca de ...",
+		  "options":
+			[
+				{
+					"label": "Acerca de ...",
+					"event": "acercaDe"
+				}
+			]
+		}		
+		
+	]
+}
+	

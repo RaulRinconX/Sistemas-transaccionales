@@ -1,0 +1,22 @@
+{
+	"title": "Nombres de las tablas de AlohAndes para pruebas de la aplicación cuando la base de datos no existe o está caida",
+	"unidadPersistencia": "ParranderosErrorDS",
+	"tablas":
+	[
+		"AlohAndes_sequence",
+		"X_ADMINVIVIENDA",
+		"X_APARTAMENTO",
+		"X_CLIENTE",
+		"X_CLIENTEMIEMBROCOMUNIDAD",
+		"X_CONTRATO",
+		"X_EMPRESA",
+		"X_HOSPEDAJE",
+		"X_OFERTACOMUN"
+		"X_OFERTAEXCLUSIVA",
+		"X_PROPIETARIOMIEMBRO",
+		"X_RESERVACOMUN",
+		"X_VECINO",
+		"X_VIVIENDA",
+		"X_VIVIENDAUNIVERSITARIA"
+	]
+}
